@@ -1,4 +1,4 @@
-**my dotfiles**
+# My dotfiles
 
 Chromium extensions:
  - Adblock Plus
