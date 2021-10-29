@@ -1,7 +1,7 @@
 #!/bin/sh  
 
 # installing minimal requirements
-exec sudo pacman -S zsh ttf-font xorg-xrandr
+exec sudo pacman -S zsh ttf-font xorg-xrandr alacritty gst-plugins-good gst-libav
 
 
 #exec chsh -s $(which zsh) &

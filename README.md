@@ -4,6 +4,7 @@ Minimum:
  - zsh
  - ttf-font
  - xorg-xrandr
+ - gst-plugins-good gst-libav (for media decoding in minimal web browsers)
 
 <br>
 
