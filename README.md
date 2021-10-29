@@ -1,3 +1,13 @@
+# Requirements
+
+Minimum:
+ - zsh
+
+<br>
+
+Recommended:
+ - surf
+
 # Description
 
 Chromium extensions:
@@ -17,6 +27,3 @@ Personal shell scripts:
 Run installer script:
 ``` cd dotfiles ``` <br>
 ``` ./install.sh ```
-
-Make zsh default shell: <br>
-``` chsh -s $(which zsh) ```
