@@ -24,8 +24,8 @@ Personal shell scripts:
  - xlayout.sh sets display layout for x server
 
 # How to install automatically
-Run installer script:
-``` cd dotfiles ```
+Run installer script: 
 <br>
+``` cd dotfiles ```
 <br>
 ``` ./install.sh ```
