@@ -27,4 +27,5 @@ Personal shell scripts:
 Run installer script:
 ``` cd dotfiles ```
 <br>
+<br>
 ``` ./install.sh ```
