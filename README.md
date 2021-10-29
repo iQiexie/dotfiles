@@ -25,5 +25,6 @@ Personal shell scripts:
 
 # How to install automatically
 Run installer script:
-``` cd dotfiles ``` <br>
+``` cd dotfiles ```
+<br>
 ``` ./install.sh ```
