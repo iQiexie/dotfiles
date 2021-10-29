@@ -16,3 +16,6 @@ Personal shell scripts:
 # How to install automatically
 ``` cd dotfiles ```
 ``` ./install.sh ```
+
+Make zsh default shell
+``` chsh -s $(which zsh) ```
