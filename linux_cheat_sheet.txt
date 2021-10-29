@@ -1,4 +1,0 @@
-{some app} & disown - To run an app without holding up the terminal
-https://unix.stackexchange.com/questions/200169/run-application-without-holding-up-terminal
-
-qtile config reference: https://gitlab.com/OldTechBloke/dotfiles/-/blob/master/.config/qtile/config.py
