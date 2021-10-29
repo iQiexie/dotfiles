@@ -14,8 +14,9 @@ Personal shell scripts:
  - xlayout.sh sets display layout for x server
 
 # How to install automatically
+Run installer script:
 ``` cd dotfiles ``` <br>
 ``` ./install.sh ```
 
-Make zsh default shell
+Make zsh default shell: <br>
 ``` chsh -s $(which zsh) ```
