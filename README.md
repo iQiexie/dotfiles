@@ -2,7 +2,7 @@
 
 Chromium extensions:
  - Adblock Plus
- - Chromium Web Store
+ - Chromium Web Store <span class="external-link"><a href="https://github.com/NeverDecaf/chromium-web-store" target="_blank">how to set up</a></span>
  - SponsorBlock for YouTube - Skip Sponsorships
 
 <br>
