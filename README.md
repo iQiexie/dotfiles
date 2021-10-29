@@ -2,15 +2,14 @@
 
 Minimum:
  - zsh
+ - zsh-syntax-highlighting
  - ttf-font
  - xorg-xrandr
- - gst-plugins-good gst-libav (for media decoding in minimal web browsers)
-
+ - gst-plugins-good & gst-libav (for media decoding in minimal web browsers)
+ - pulseaudio
 <br>
-
 Recommended:
  - surf
- - zsh-syntax-highlighting
  - alacritty
 
 # Description
@@ -19,9 +18,7 @@ Chromium extensions:
  - Adblock Plus
  - Chromium Web Store <span class="external-link"><a href="https://github.com/NeverDecaf/chromium-web-store" target="_blank">how to set up</a></span>
  - SponsorBlock for YouTube - Skip Sponsorships
-
 <br>
-
 Personal shell scripts:
  - brightness.sh controls screen brightness. <br>
    Usage: ```./brightness.sh {desired brightness in percents} ```
