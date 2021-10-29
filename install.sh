@@ -1,6 +1,10 @@
 #!/bin/sh  
 
-#exec sudo chsh -s $(which zsh) &
+# installing minimal requirements
+exec sudo pacman -S zsh ttf-font xorg-xrandr
+
+
+#exec chsh -s $(which zsh) &
 exec cp -r .config/htop ~/.config/ &
 cp -r .config/qtile ~/.config/ &
 cp shell_scripts/xlayout.sh ~ &

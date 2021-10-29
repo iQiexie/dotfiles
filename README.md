@@ -2,11 +2,15 @@
 
 Minimum:
  - zsh
+ - ttf-font
+ - xorg-xrandr
 
 <br>
 
 Recommended:
  - surf
+ - zsh-syntax-highlighting
+ - alacritty
 
 # Description
 
