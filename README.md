@@ -1,4 +1,4 @@
-# My dotfiles
+# Description
 
 Chromium extensions:
  - Adblock Plus
@@ -12,3 +12,7 @@ Personal shell scripts:
    Usage: ```./brightness.sh {desired brightness in percents} ```
  - fixf.sh fixes F-keys for Keychrone keyboards
  - xlayout.sh sets display layout for x server
+
+# How to install automatically
+``` cd dotfiles ```
+``` ./install.sh ```
