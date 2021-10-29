@@ -5,6 +5,7 @@ Chromium extensions:
  - Chromium Web Store
  - SponsorBlock for YouTube - Skip Sponsorships
 
+<br>
 
 Personal shell scripts:
  - brightness.sh controls screen brightness. <br>
