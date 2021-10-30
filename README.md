@@ -35,4 +35,15 @@ Run installer script:
 ```
 cd dotfiles
 ./install.sh
+
+
+*Installing yay*
 ```
+cd shell_scripts
+mkdir temp
+cp install_yay temp
+cd temp
+./install_yay
+cd ..
+rm -rf temp
+`````

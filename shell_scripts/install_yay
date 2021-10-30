@@ -1,0 +1,7 @@
+#!/bin/sh
+
+git clone https://aur.archlinux.org/yay-git.git &
+sleep 5s
+mv $(pwd)/yay-git/PKGBUILD $(pwd) &&
+makepkg -si
+rm -rf yay-git

@@ -1,10 +1,10 @@
 #!/bin/sh  
 
 # installing minimal requirements
-exec sudo pacman -S -noconfirm zsh zsh-syntax-highlighting ttf-font xorg-xrandr alacritty gst-plugins-good gst-libav pulseaudio &
+exec sudo pacman -S --noconfirm qtile zsh zsh-syntax-highlighting ttf-font xorg-xrandr alacritty gst-plugins-good gst-libav pulseaudio &
 
 # make zsh the default shell
-exec chsh -s $(which zsh) &
+#exec chsh -s $(which zsh) &
 
 exec cp -r .config/htop ~/.config/ &
 cp -r .config/qtile ~/.config/ &
@@ -16,3 +16,5 @@ cp shell_scripts/logout.sh ~ &
 cp .vimrc ~ &
 cp .xinitrc ~ &
 cp .zshrc ~ 
+
+exec echo done
