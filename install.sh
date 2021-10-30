@@ -1,7 +1,7 @@
 #!/bin/bash  
 
 echo [INSTALLER] DOWNLOADING SOFTWARE
-source install_downloader.sh
+source shell_scripts/install_downloader.sh
 
 echo [INSTALLER] SETTING UP AUDIO
 exec sudo alsactl restore &

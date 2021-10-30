@@ -10,6 +10,8 @@ Installs automatically
  - alacritty (terminal)
  - bc (math in terminal)
  - xdg-utils (for setting up default apps)
+ - nss (nss - some basic libraries chromium doesn't work without)
+
 
 <br>
 
