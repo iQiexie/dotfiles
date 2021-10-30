@@ -46,4 +46,4 @@ cd temp
 ./install_yay
 cd ..
 rm -rf temp
-`````
+```
