@@ -1,16 +1,19 @@
-# Requirements
-
-Minimum:
+# Software i use
+Installs automatically
  - zsh
  - zsh-syntax-highlighting
  - ttf-font
  - xorg-xrandr
  - gst-plugins-good & gst-libav (for media decoding in minimal web browsers)
  - pulseaudio
+ - qtile
+ - alacritty (terminal)
+ - bc (math in terminal)
+ - xdg-utils (for setting up default apps)
 
 <br>
 
-Recommended:
+Manual install
  - surf
  - alacritty
 
