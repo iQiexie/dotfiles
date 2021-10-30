@@ -37,7 +37,7 @@ cd dotfiles
 ./install.sh
 ```
 
-*Installing yay*
+Installing yay
 ```
 cd shell_scripts
 mkdir temp

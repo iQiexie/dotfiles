@@ -1,7 +1,10 @@
 #!/bin/sh  
 
 # installing minimal requirements
-exec sudo pacman -S --noconfirm qtile zsh zsh-syntax-highlighting ttf-font xorg-xrandr alacritty gst-plugins-good gst-libav pulseaudio &
+exec sudo pacman -S --noconfirm qtile zsh zsh-syntax-highlighting ttf-font xorg-xrandr alacritty gst-plugins-good gst-libav pulseaudio alsa-utils bc &
+
+# set up audio
+exec alsactl restore &
 
 # make zsh the default shell
 #exec chsh -s $(which zsh) &

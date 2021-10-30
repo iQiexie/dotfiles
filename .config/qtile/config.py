@@ -71,10 +71,10 @@ keys = [
     # Move windows to different physical screens
     Key([mod, "shift"], "period", lazy.function(window_to_previous_screen)),
     Key([mod, "shift"], "comma", lazy.function(window_to_next_screen)),
-    Key([mod, "shift"], "1", lazy.to_screen(2)),
-    Key([mod, "shift"], "2", lazy.to_screen(0)),
-    Key([mod, "shift"], "3", lazy.to_screen(1)),
-    Key([mod, "shift"], "t", lazy.function(switch_screens)),
+    Key([alt, "control"], "a", lazy.to_screen(2)),
+    Key([alt, "control"], "2", lazy.to_screen(0)),
+    Key([alt, "control"], "3", lazy.to_screen(1)),
+    Key([alt, "shift"], "t", lazy.function(switch_screens)),
 
 
     # Moving windows between left/right columns or move up/down in current stack.
@@ -165,18 +165,45 @@ default_screen = Screen(
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.TextBox("default config", name="default"),
+                widget.TextBox("Screen 2", name="kek"),
+              #  widget.KeyboardLayout(configured_keyboards=['us','ru'], option='grp:alt_shift_toggle'),
                 widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
                 widget.Systray(),
-                widget.Clock(format='%Y-%m-%d %a %I:%M %p'),
+                widget.Clock(format='%d.%m.%Y %a %I:%M'),
                 widget.QuickExit(),
             ],
             24,
         ),
-    )
+ )
+
+third_screen = Screen(
+        bottom=bar.Bar(
+            [
+                widget.CurrentLayout(),
+		widget.GroupBox(),
+                widget.TextBox("Screen 3", name="kek"),
+            ],
+            24,
+        ),
+)
+
+first_screen = Screen(
+        bottom=bar.Bar(
+            [
+                widget.CurrentLayout(),
+                widget.GroupBox(),
+                widget.TextBox("Screen 1", name="kek"),
+            ],
+            24,
+        ),
+)
+
+
 
 screens = [
     default_screen,
+    third_screen,
+    first_screen,
 ]
 
 # Drag floating layouts.
