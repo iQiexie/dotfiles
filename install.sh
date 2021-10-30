@@ -1,15 +1,21 @@
-#!/bin/sh  
+#!/bin/bash  
 
-# installing minimal requirements
-exec sudo pacman -S --noconfirm qtile zsh zsh-syntax-highlighting ttf-font xorg-xrandr alacritty gst-plugins-good gst-libav pulseaudio alsa-utils bc &
+echo [INSTALLER] DOWNLOADING SOFTWARE
+source install_downloader.sh
 
-# set up audio
-exec alsactl restore &
+echo [INSTALLER] SETTING UP AUDIO
+exec sudo alsactl restore &
 
-# make zsh the default shell
-#exec chsh -s $(which zsh) &
+echo [INSTALLER] CONFIGURING GIT
+git config --global user.name "Neykuratick"
+git config --global user.email "neykuratick@yahoo.com"
+git config --global credential.helper cache
 
-exec cp -r .config/htop ~/.config/ &
+#echo [INSTALLER] MAKING ZSH DEFAULT SHELL
+#exec chsh -s $(which zsh
+
+echo [INSTALLER] COPYING ALL MY PERSONAL SCRIPTS AND CONFIG FILES
+cp -r .config/htop ~/.config/ &
 cp -r .config/qtile ~/.config/ &
 cp shell_scripts/xlayout.sh ~ &
 cp shell_scripts/kblayout.sh ~ &
@@ -20,4 +26,4 @@ cp .vimrc ~ &
 cp .xinitrc ~ &
 cp .zshrc ~ 
 
-exec echo done
+exec echo [INSTALLER] DONE 
