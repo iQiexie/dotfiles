@@ -35,7 +35,7 @@ Run installer script:
 ```
 cd dotfiles
 ./install.sh
-
+```
 
 *Installing yay*
 ```
