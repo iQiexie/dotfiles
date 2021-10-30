@@ -23,6 +23,10 @@ def window_to_next_screen(qtile):
         group = qtile.screens[i + 1].group.name
         qtile.current_window.togroup(group)
 
+def window_to_screen(qtile, screen):
+    group = qtile.screens[screen].group.name
+    qtile.current_window.togroup(group)
+    
 def switch_screens(qtile):
     i = qtile.screens.index(qtile.current_screen)
     group = qtile.screens[i - 1].group
@@ -71,10 +75,10 @@ keys = [
     # Move windows to different physical screens
     Key([mod, "shift"], "period", lazy.function(window_to_previous_screen)),
     Key([mod, "shift"], "comma", lazy.function(window_to_next_screen)),
-    Key([alt, "control"], "a", lazy.to_screen(2)),
-    Key([alt, "control"], "2", lazy.to_screen(0)),
-    Key([alt, "control"], "3", lazy.to_screen(1)),
-    Key([alt, "shift"], "t", lazy.function(switch_screens)),
+    Key([mod, "shift"], "1", lazy.to_screen(2)),
+    Key([mod, "shift"], "2", lazy.to_screen(0)),
+    Key([mod, "shift"], "3", lazy.to_screen(1)),
+    Key([mod, "shift"], "t", lazy.function(switch_screens)),
 
 
     # Moving windows between left/right columns or move up/down in current stack.
@@ -86,8 +90,8 @@ keys = [
         desc="Move window down"),
     Key([alt], "k", lazy.layout.shuffle_up(), desc="Move window up"),
 
+
     # Reszie (grow) windows. If current window is on the edge of screen and direction
-    # will be to screen edge - window would shrink.
     Key([mod], "h", lazy.layout.grow_left(),
         desc="Grow window to the left"),
     Key([mod], "l", lazy.layout.grow_right(),
@@ -97,11 +101,8 @@ keys = [
     Key([mod], "k", lazy.layout.grow_up(), desc="Grow window up"),
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
 
-    # Toggle between split and unsplit sides of stack.
-    # Split = all windows displayed
-    # Unsplit = 1 window displayed, like Max layout, but still with
-   
-    # multiple stack panes
+
+    # stack panels
     Key([mod, "shift"], "Return", lazy.layout.toggle_split(),
         desc="Toggle between split and unsplit sides of stack"),
 

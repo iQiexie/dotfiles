@@ -10,14 +10,14 @@ Installs automatically
  - alacritty (terminal)
  - bc (math in terminal)
  - xdg-utils (for setting up default apps)
- - nss (nss - some basic libraries chromium doesn't work without)
+ - nss (some basic libraries chromium doesn't work without)
 
 
 <br>
 
 Manual install
- - surf
- - alacritty
+ - surf (web browser)
+ - vimb (web browser)
 
 # Description
 
@@ -52,3 +52,11 @@ cd temp
 cd ..
 rm -rf temp
 ```
+
+# Default browser
+
+To make chrome default browser, run:
+<br> ```xdg-settings set default-web-browser chrome.desktop```
+
+In order for the above command to work, there has to be chrome.AppImage file in the home directory. To modify this,
+edit the 'Exec' line in chrome.desktop.
