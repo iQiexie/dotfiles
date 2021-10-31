@@ -11,11 +11,13 @@ from libqtile.utils import guess_terminal
 mod = "mod4"
 alt = "mod1"
 
+
 def window_to_previous_screen(qtile):
     i = qtile.screens.index(qtile.current_screen)
     if i != 0:
         group = qtile.screens[i - 1].group.name
         qtile.current_window.togroup(group)
+
 
 def window_to_next_screen(qtile):
     i = qtile.screens.index(qtile.current_screen)
@@ -23,37 +25,35 @@ def window_to_next_screen(qtile):
         group = qtile.screens[i + 1].group.name
         qtile.current_window.togroup(group)
 
+
 def window_to_screen(qtile, screen):
     group = qtile.screens[screen].group.name
     qtile.current_window.togroup(group)
-    
+
+
 def switch_screens(qtile):
     i = qtile.screens.index(qtile.current_screen)
     group = qtile.screens[i - 1].group
     qtile.current_screen.set_group(group)
 
 
-
 terminal = guess_terminal()
 
 keys = [
-    
+
     # Launch terminal, kill window, restart and exit Qtile
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "control"], "r", lazy.restart(), desc="Restart Qtile"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    
-   
+
     # Volume keys
-   # Key([alt], "m", lazy.spawn("amixer -D pulse sset Master toggle")),
+    # Key([alt], "m", lazy.spawn("amixer -D pulse sset Master toggle")),
     Key([], "KP_Add", lazy.spawn("amixer set Master playback 3+")),
     Key([], "KP_Enter", lazy.spawn("amixer set Master playback 3-")),
-    
-    
+
     # Toggle window floating
     Key([mod, "shift"], "space", lazy.window.toggle_floating()),
-
 
     # Switch between windows
     Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
@@ -62,7 +62,6 @@ keys = [
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
     Key([alt], "Tab", lazy.layout.next(),
         desc="Move window focus to other window"),
-    
 
     # Switch focus to a physical monitor (dual/triple set up)
     Key([mod], "period", lazy.next_screen()),
@@ -71,7 +70,6 @@ keys = [
     Key([mod], "2", lazy.to_screen(0)),
     Key([mod], "3", lazy.to_screen(1)),
 
-
     # Move windows to different physical screens
     Key([mod, "shift"], "period", lazy.function(window_to_previous_screen)),
     Key([mod, "shift"], "comma", lazy.function(window_to_next_screen)),
@@ -79,7 +77,6 @@ keys = [
     Key([mod, "shift"], "2", lazy.to_screen(0)),
     Key([mod, "shift"], "3", lazy.to_screen(1)),
     Key([mod, "shift"], "t", lazy.function(switch_screens)),
-
 
     # Moving windows between left/right columns or move up/down in current stack.
     Key([alt], "h", lazy.layout.shuffle_left(),
@@ -90,7 +87,6 @@ keys = [
         desc="Move window down"),
     Key([alt], "k", lazy.layout.shuffle_up(), desc="Move window up"),
 
-
     # Reszie (grow) windows. If current window is on the edge of screen and direction
     Key([mod], "h", lazy.layout.grow_left(),
         desc="Grow window to the left"),
@@ -100,7 +96,6 @@ keys = [
         desc="Grow window down"),
     Key([mod], "k", lazy.layout.grow_up(), desc="Grow window up"),
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
-
 
     # stack panels
     Key([mod, "shift"], "Return", lazy.layout.toggle_split(),
@@ -113,9 +108,9 @@ keys = [
     #    desc="Spawn a command using a prompt widget"),
 ]
 
-#groups = [Group(i) for i in "123456789"]
+# groups = [Group(i) for i in "123456789"]
 
-#for i in groups:
+# for i in groups:
 #    keys.extend([
 #        # mod1 + letter of group = switch to group
 #        Key([mod], i.name, lazy.group[i.name].toscreen(),
@@ -154,6 +149,31 @@ widget_defaults = dict(
 extension_defaults = widget_defaults.copy()
 
 default_screen = Screen(
+    bottom=bar.Bar(
+        [
+            widget.CurrentLayout(),
+            widget.GroupBox(),
+            widget.Prompt(),
+            widget.WindowName(),
+            widget.Chord(
+                chords_colors={
+                    'launch': ("#ff0000", "#ffffff"),
+                },
+                name_transform=lambda name: name.upper(),
+            ),
+            widget.TextBox("Screen 2", name="kek"),
+            #  widget.KeyboardLayout(configured_keyboards=['us','ru'], option='grp:alt_shift_toggle'),
+            widget.Systray(),
+            widget.Clock(format='%d.%m.%Y %a %H:%M'),
+            widget.QuickExit(),
+        ],
+        24,
+    ),
+)
+
+
+def init_secondary_screen(screen_name):
+    return Screen(
         bottom=bar.Bar(
             [
                 widget.CurrentLayout(),
@@ -166,45 +186,20 @@ default_screen = Screen(
                     },
                     name_transform=lambda name: name.upper(),
                 ),
-                widget.TextBox("Screen 2", name="kek"),
-              #  widget.KeyboardLayout(configured_keyboards=['us','ru'], option='grp:alt_shift_toggle'),
-                widget.TextBox("Press &lt;M-r&gt; to spawn", foreground="#d75f5f"),
+                widget.TextBox(screen_name, name="kek"),
                 widget.Systray(),
-                widget.Clock(format='%d.%m.%Y %a %I:%M'),
+                widget.Clock(format='%d.%m.%Y %a %H:%M'),
                 widget.QuickExit(),
             ],
             24,
         ),
- )
-
-third_screen = Screen(
-        bottom=bar.Bar(
-            [
-                widget.CurrentLayout(),
-		widget.GroupBox(),
-                widget.TextBox("Screen 3", name="kek"),
-            ],
-            24,
-        ),
-)
-
-first_screen = Screen(
-        bottom=bar.Bar(
-            [
-                widget.CurrentLayout(),
-                widget.GroupBox(),
-                widget.TextBox("Screen 1", name="kek"),
-            ],
-            24,
-        ),
-)
-
+    )
 
 
 screens = [
     default_screen,
-    third_screen,
-    first_screen,
+    init_secondary_screen("Screen 3"),
+    init_secondary_screen("Screen 1"),
 ]
 
 # Drag floating layouts.
