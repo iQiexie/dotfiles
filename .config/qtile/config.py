@@ -46,9 +46,9 @@ keys = [
     
    
     # Volume keys
-    #Key([alt], "m", lazy.spawn("amixer -D pulse sset Master toggle")),
-    #Key([alt], "t", lazy.spawn("amixer -D pulse sset Master 5%+")),
-    #Key([alt], "y", lazy.spawn("amixer -D pulse sset Master 5%-")),
+   # Key([alt], "m", lazy.spawn("amixer -D pulse sset Master toggle")),
+    Key([], "KP_Add", lazy.spawn("amixer set Master playback 3+")),
+    Key([], "KP_Enter", lazy.spawn("amixer set Master playback 3-")),
     
     
     # Toggle window floating
