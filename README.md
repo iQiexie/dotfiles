@@ -18,6 +18,7 @@ Installs automatically
 Manual install
  - surf (web browser)
  - vimb (web browser)
+ - ungoogled chromium (web browser)
 
 # Description
 
@@ -52,11 +53,3 @@ cd temp
 cd ..
 rm -rf temp
 ```
-
-# Default browser
-
-To make chrome default browser, run:
-<br> ```xdg-settings set default-web-browser chrome.desktop```
-
-In order for the above command to work, there has to be chrome.AppImage file in the home directory. To modify this,
-edit the 'Exec' line in chrome.desktop.

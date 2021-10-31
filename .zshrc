@@ -63,8 +63,12 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # Configuring colors used by 'ls' command
 # https://geoff.greer.fm/lscolors/
 export LS_COLORS="di=1;34:ln=0:so=0:pi=0:ex=1;31:bd=0:cd=0:su=0:sg=0:tw=0:ow=0"
+
+
+# Aliases
 alias ls="ls --color=auto"
 alias ls -lah="ls -lah --color=auto"
-
+alias surf="surf google.com & disown"
+alias chrome="chromium"
 
 neofetch
