@@ -70,5 +70,6 @@ alias ls="ls --color=auto"
 alias ls -lah="ls -lah --color=auto"
 alias surf="surf google.com & disown"
 alias chrome="chromium"
+alias untar="tar xvf"
 
 neofetch
