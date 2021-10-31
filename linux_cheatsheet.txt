@@ -5,3 +5,5 @@ https://unix.stackexchange.com/questions/200169/run-application-without-holding-
 
 3. chmod +x {file name} - To make something exectable
 
+4. To install a binary of some sort instead of searching for appimage search for "bin" version. Then,
+when you have finally downloaded your package, run "sudo pacman -U {package name}" command
