@@ -109,8 +109,8 @@ keys = [
     # Toggle between different layouts as defined below
     Key([mod], "space", lazy.next_layout(), desc="Toggle between layouts"),
 
-    Key([mod], "r", lazy.spawncmd(),
-        desc="Spawn a command using a prompt widget"),
+    # Key([mod], "r", lazy.spawncmd(),
+    #    desc="Spawn a command using a prompt widget"),
 ]
 
 #groups = [Group(i) for i in "123456789"]
