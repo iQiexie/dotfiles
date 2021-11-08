@@ -133,8 +133,8 @@ clock_background = "#35425c"
 
 colors = [
     [bright_foreground, bright_foreground],  # 0
-    [dark_background, dark_background],      # 1
-    [clock_background, clock_background],    # 2
+    [dark_background, dark_background],  # 1
+    [clock_background, clock_background],  # 2
     ["#bf616a", "#bf616a"],  # 3 red
     ["#a3be8c", "#a3be8c"],  # 4 green
     ["#ebcb8b", "#ebcb8b"],  # 5 yellow
@@ -149,38 +149,31 @@ colors = [
     ["#242831", "#242831"],  # 14 super dark background
 ]
 
+widget_defaults = dict(
+    font="Arial",
+    fontsize=14,
+    padding=3,
+    foreground=colors[0],
+    background=colors[1],
+)
+extension_defaults = widget_defaults.copy()
+
 
 def init_widgets(screen_id):
     return [
         widget.CurrentLayout(
-            foreground=colors[0],
-            background=colors[1],
-            font="Arial",
-            fontsize=14,
             padding=10
         ),
 
         widget.WindowName(
-            foreground=colors[0],
-            background=colors[1],
-            font="Arial",
-            fontsize=14,
             padding=10
         ),
 
         widget.Systray(
-            foreground=colors[0],
-            background=colors[1],
-            font="Arial",
-            fontsize=14
         ),
 
         widget.TextBox(
             f"Screen {screen_id}",
-            foreground=colors[0],
-            background=colors[1],
-            font="Arial",
-            fontsize=14,
             padding=30
         ),
 
@@ -188,8 +181,6 @@ def init_widgets(screen_id):
             format='%d.%m.%Y %a %H:%M',
             foreground=colors[0],
             background=colors[2],
-            font="Arial",
-            fontsize=14,
             padding=10
         ),
     ]
@@ -211,29 +202,16 @@ screens = [
 """ FUCKING WASTE """
 # ....!!!!....
 
+default_theme = {"border_width": 2,
+                 "margin": 10,
+                 "border_focus": "e5e9f0",
+                 "border_normal": "3b4252"
+                 }
 
 layouts = [
-    layout.Columns(border_focus_stack=['#d75f5f', '#8f3d3d'], border_width=4),
-    layout.Max(),
-    # Try more layouts by unleashing below layouts.
-    # layout.Stack(num_stacks=2),
-    # layout.Bsp(),
-    # layout.Matrix(),
-    # layout.MonadTall(),
-    # layout.MonadWide(),
-    # layout.RatioTile(),
-    # layout.Tile(),
-    # layout.TreeTab(),
-    # layout.VerticalTile(),
-    # layout.Zoomy(),
+    layout.MonadTall(**default_theme),
+    layout.Max(**default_theme),
 ]
-
-widget_defaults = dict(
-    font='sans',
-    fontsize=12,
-    padding=3,
-)
-extension_defaults = widget_defaults.copy()
 
 # for i in groups:
 #    keys.extend([
