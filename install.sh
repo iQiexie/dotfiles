@@ -21,10 +21,16 @@ cp -r .config/albert ~/.config/ &
 cp shell_scripts/xlayout.sh ~ &
 cp shell_scripts/kblayout.sh ~ &
 cp shell_scripts/brightness.sh ~ &
-cp shell_scripts/fixf.sh ~ &
 cp shell_scripts/logout.sh ~ &
 cp .vimrc ~ &
 cp .xinitrc ~ &
 cp .zshrc ~ 
+
+echo [INSTALLER] CONFIGURING AUTOSTART
+exec sudo cp autostart_services/fixf.service /etc/systemd/system/fixf.service &
+exec sudo cp shell_scripts/fixf.sh /usr/bin/fixf.sh &
+#exec chmod 755 /usr/bin/fixf.sh
+exec sudo systemctl enable fixf.service &
+exec sudo systemctl start fixf.service
 
 exec echo [INSTALLER] DONE 
