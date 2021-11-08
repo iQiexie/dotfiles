@@ -203,7 +203,7 @@ screens = [
 # ....!!!!....
 
 default_theme = {"border_width": 2,
-                 "margin": 10,
+                 "margin": 12,
                  "border_focus": "e5e9f0",
                  "border_normal": "3b4252"
                  }
