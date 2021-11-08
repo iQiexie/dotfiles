@@ -2,4 +2,5 @@
 
 exec ~/kblayout.sh &
 
-qtile start
+qtile start &
+albert
