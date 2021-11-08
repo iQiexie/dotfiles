@@ -188,7 +188,7 @@ def init_widgets(screen_id):
 
 def init_screen(screen_id):
     return Screen(
-        top=bar.Bar(widgets=init_widgets(screen_id), size=27)
+        bottom=bar.Bar(widgets=init_widgets(screen_id), size=27)
     )
 
 
