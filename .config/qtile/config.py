@@ -1,6 +1,4 @@
 # -*- coding: utf-8 -*-
-# to create a shortcut involving more that just one mod key, place it into
-# []. Like [mod, "shift], "h" will create win+shift+h hotkey
 
 from typing import List  # noqa: F401
 from libqtile import bar, layout, widget
@@ -8,9 +6,14 @@ from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
+# -- GLOBAL VARIABLES --
+
 mod = "mod4"
 alt = "mod1"
+terminal = guess_terminal()
 
+
+# /-- --
 
 def window_to_previous_screen(qtile):
     i = qtile.screens.index(qtile.current_screen)
@@ -26,9 +29,10 @@ def window_to_next_screen(qtile):
         qtile.current_window.togroup(group)
 
 
-def window_to_screen(qtile, screen):
-    group = qtile.screens[screen].group.name
-    qtile.current_window.togroup(group)
+def move_every_window_to_screen(qtile, screen):
+    screen_id = [2, 0, 1]
+    group = qtile.screens[screen_id[screen]].group
+    qtile.current_screen.set_group(group)
 
 
 def switch_screens(qtile):
@@ -37,7 +41,10 @@ def switch_screens(qtile):
     qtile.current_screen.set_group(group)
 
 
-terminal = guess_terminal()
+# ....!!!!....
+""" My precious keybindings """
+# ....!!!!....
+
 
 keys = [
 
@@ -73,9 +80,9 @@ keys = [
     # Move windows to different physical screens
     Key([mod, "shift"], "period", lazy.function(window_to_previous_screen)),
     Key([mod, "shift"], "comma", lazy.function(window_to_next_screen)),
-    Key([mod, "shift"], "1", lazy.to_screen(2)),
-    Key([mod, "shift"], "2", lazy.to_screen(0)),
-    Key([mod, "shift"], "3", lazy.to_screen(1)),
+    Key([mod, "shift"], "1", lazy.function(move_every_window_to_screen, 0)),
+    Key([mod, "shift"], "2", lazy.function(move_every_window_to_screen, 1)),
+    Key([mod, "shift"], "3", lazy.function(move_every_window_to_screen, 2)),
     Key([mod, "shift"], "t", lazy.function(switch_screens)),
 
     # Moving windows between left/right columns or move up/down in current stack.
@@ -108,22 +115,47 @@ keys = [
     #    desc="Spawn a command using a prompt widget"),
 ]
 
-# groups = [Group(i) for i in "123456789"]
+# ....!!!!....
+""" My precious Screens """
 
-# for i in groups:
-#    keys.extend([
-#        # mod1 + letter of group = switch to group
-#        Key([mod], i.name, lazy.group[i.name].toscreen(),
-#            desc="Switch to group {}".format(i.name)),
-#
-#        # mod1 + shift + letter of group = switch to & move focused window to group
-#        Key([mod, "shift"], i.name, lazy.window.togroup(i.name, switch_group=True),
-#            desc="Switch to & move focused window to group {}".format(i.name)),
-#        # Or, use below if you prefer not to switch to that group.
-#        # # mod1 + shift + letter of group = move focused window to group
-#        # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
-#        #     desc="move focused window to group {}".format(i.name)),
-#    ])
+
+# ....!!!!....
+
+
+def init_screen(screen_id):
+    return Screen(
+        bottom=bar.Bar(
+            [
+                widget.CurrentLayout(),
+                widget.GroupBox(),
+                widget.Prompt(),
+                widget.WindowName(),
+                widget.Chord(
+                    chords_colors={
+                        'launch': ("#ff0000", "#ffffff"),
+                    },
+                    name_transform=lambda name: name.upper(),
+                ),
+                widget.TextBox(f"Screen {screen_id}", name=screen_id),
+                widget.Systray(),
+                widget.Clock(format='%d.%m.%Y %a %H:%M'),
+                # widget.QuickExit(),
+            ],
+            size=24,
+        ),
+    )
+
+
+screens = [
+    init_screen(2),
+    init_screen(3),
+    init_screen(1),
+]
+
+# ....!!!!....
+""" FUCKING WASTE """
+# ....!!!!....
+
 
 layouts = [
     layout.Columns(border_focus_stack=['#d75f5f', '#8f3d3d'], border_width=4),
@@ -148,59 +180,23 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
-default_screen = Screen(
-    bottom=bar.Bar(
-        [
-            widget.CurrentLayout(),
-            widget.GroupBox(),
-            widget.Prompt(),
-            widget.WindowName(),
-            widget.Chord(
-                chords_colors={
-                    'launch': ("#ff0000", "#ffffff"),
-                },
-                name_transform=lambda name: name.upper(),
-            ),
-            widget.TextBox("Screen 2", name="kek"),
-            #  widget.KeyboardLayout(configured_keyboards=['us','ru'], option='grp:alt_shift_toggle'),
-            widget.Systray(),
-            widget.Clock(format='%d.%m.%Y %a %H:%M'),
-            widget.QuickExit(),
-        ],
-        24,
-    ),
-)
+groups = [Group(i) for i in "123"]
 
+# for i in groups:
+#    keys.extend([
+# mod1 + letter of group = switch to group
+# Key([mod], i.name, lazy.group[i.name].toscreen(),
+#    desc="Switch to group {}".format(i.name)),
 
-def init_secondary_screen(screen_name):
-    return Screen(
-        bottom=bar.Bar(
-            [
-                widget.CurrentLayout(),
-                widget.GroupBox(),
-                widget.Prompt(),
-                widget.WindowName(),
-                widget.Chord(
-                    chords_colors={
-                        'launch': ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
-                ),
-                widget.TextBox(screen_name, name="kek"),
-                widget.Systray(),
-                widget.Clock(format='%d.%m.%Y %a %H:%M'),
-                widget.QuickExit(),
-            ],
-            24,
-        ),
-    )
+# mod1 + shift + letter of group = switch to & move focused window to group
+# Key([mod, "shift"], i.name, lazy.window.togroup(i.name, switch_group=True),
+#    desc="Switch to & move focused window to group {}".format(i.name)),
+# Or, use below if you prefer not to switch to that group.
+# # mod1 + shift + letter of group = move focused window to group
+# Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
+#     desc="move focused window to group {}".format(i.name)),
+#    ])
 
-
-screens = [
-    default_screen,
-    init_secondary_screen("Screen 3"),
-    init_secondary_screen("Screen 1"),
-]
 
 # Drag floating layouts.
 mouse = [
