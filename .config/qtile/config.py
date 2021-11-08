@@ -125,32 +125,79 @@ keys = [
 
 # ....!!!!....
 """ My precious Screens """
-
-
 # ....!!!!....
+
+dark_background = "#202a3b"
+bright_foreground = "#ffffff"
+clock_background = "#35425c"
+
+colors = [
+    [bright_foreground, bright_foreground],  # 0
+    [dark_background, dark_background],      # 1
+    [clock_background, clock_background],    # 2
+    ["#bf616a", "#bf616a"],  # 3 red
+    ["#a3be8c", "#a3be8c"],  # 4 green
+    ["#ebcb8b", "#ebcb8b"],  # 5 yellow
+    ["#81a1c1", "#81a1c1"],  # 6 blue
+    ["#e5e9f0", "#e5e9f0"],  # 7 white
+    ["#88c0d0", "#88c0d0"],  # 8 cyan
+    ["#b48ead", "#b48ead"],  # 9 magenta
+    ["#4c566a", "#4c566a"],  # 10 grey
+    ["#d08770", "#d08770"],  # 11 orange
+    ["#8fbcbb", "#8fbcbb"],  # 12 super cyan
+    ["#5e81ac", "#5e81ac"],  # 13 super blue
+    ["#242831", "#242831"],  # 14 super dark background
+]
+
+
+def init_widgets(screen_id):
+    return [
+        widget.CurrentLayout(
+            foreground=colors[0],
+            background=colors[1],
+            font="Arial",
+            fontsize=14,
+            padding=10
+        ),
+
+        widget.WindowName(
+            foreground=colors[0],
+            background=colors[1],
+            font="Arial",
+            fontsize=14,
+            padding=10
+        ),
+
+        widget.Systray(
+            foreground=colors[0],
+            background=colors[1],
+            font="Arial",
+            fontsize=14
+        ),
+
+        widget.TextBox(
+            f"Screen {screen_id}",
+            foreground=colors[0],
+            background=colors[1],
+            font="Arial",
+            fontsize=14,
+            padding=30
+        ),
+
+        widget.Clock(
+            format='%d.%m.%Y %a %H:%M',
+            foreground=colors[0],
+            background=colors[2],
+            font="Arial",
+            fontsize=14,
+            padding=10
+        ),
+    ]
 
 
 def init_screen(screen_id):
     return Screen(
-        bottom=bar.Bar(
-            [
-                widget.CurrentLayout(),
-                widget.GroupBox(),
-                widget.Prompt(),
-                widget.WindowName(),
-                widget.Chord(
-                    chords_colors={
-                        'launch': ("#ff0000", "#ffffff"),
-                    },
-                    name_transform=lambda name: name.upper(),
-                ),
-                widget.TextBox(f"Screen {screen_id}", name=screen_id),
-                widget.Systray(),
-                widget.Clock(format='%d.%m.%Y %a %H:%M'),
-                # widget.QuickExit(),
-            ],
-            size=24,
-        ),
+        top=bar.Bar(widgets=init_widgets(screen_id), size=27)
     )
 
 
