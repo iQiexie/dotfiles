@@ -19,7 +19,6 @@ Manual install
  - surf (web browser)
  - vimb (web browser)
  - ungoogled chromium (web browser)
- - albert (dynamic menu) 
 
 # Description
 
