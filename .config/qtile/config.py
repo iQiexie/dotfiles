@@ -11,15 +11,28 @@ from libqtile.utils import guess_terminal
 mod = "mod4"
 alt = "mod1"
 terminal = guess_terminal()
+groups = [Group(i) for i in "123"]
 
 
 # /-- --
 
-def window_to_previous_screen(qtile):
+
+def move_every_window_to_screen(qtile, screen):
+    screen_id = [2, 0, 1]
+    group = qtile.screens[screen_id[screen]].group
+    qtile.current_screen.set_group(group)
+
+
+def move_current_window_to_screen(qtile, screen):
+    screen_id = [2, 0, 1]
+    group = qtile.screens[screen_id[screen]].group
+    qtile.current_window.togroup(group.name)
+
+
+def switch_screens(qtile):
     i = qtile.screens.index(qtile.current_screen)
-    if i != 0:
-        group = qtile.screens[i - 1].group.name
-        qtile.current_window.togroup(group)
+    group = qtile.screens[i - 1].group
+    qtile.current_screen.set_group(group)
 
 
 def window_to_next_screen(qtile):
@@ -29,16 +42,11 @@ def window_to_next_screen(qtile):
         qtile.current_window.togroup(group)
 
 
-def move_every_window_to_screen(qtile, screen):
-    screen_id = [2, 0, 1]
-    group = qtile.screens[screen_id[screen]].group
-    qtile.current_screen.set_group(group)
-
-
-def switch_screens(qtile):
+def window_to_previous_screen(qtile):
     i = qtile.screens.index(qtile.current_screen)
-    group = qtile.screens[i - 1].group
-    qtile.current_screen.set_group(group)
+    if i != 0:
+        group = qtile.screens[i - 1].group.name
+        qtile.current_window.togroup(group)
 
 
 # ....!!!!....
@@ -78,11 +86,11 @@ keys = [
     Key([mod], "3", lazy.to_screen(1)),
 
     # Move windows to different physical screens
-    Key([mod, "shift"], "period", lazy.function(window_to_previous_screen)),
-    Key([mod, "shift"], "comma", lazy.function(window_to_next_screen)),
-    Key([mod, "shift"], "1", lazy.function(move_every_window_to_screen, 0)),
-    Key([mod, "shift"], "2", lazy.function(move_every_window_to_screen, 1)),
-    Key([mod, "shift"], "3", lazy.function(move_every_window_to_screen, 2)),
+    # Key([mod, "shift"], "period", lazy.function(window_to_previous_screen)),
+    # Key([mod, "shift"], "comma", lazy.function(window_to_next_screen)),
+    Key([mod, "shift"], "1", lazy.function(move_current_window_to_screen, 0)),
+    Key([mod, "shift"], "2", lazy.function(move_current_window_to_screen, 1)),
+    Key([mod, "shift"], "3", lazy.function(move_current_window_to_screen, 2)),
     Key([mod, "shift"], "t", lazy.function(switch_screens)),
 
     # Moving windows between left/right columns or move up/down in current stack.
@@ -179,8 +187,6 @@ widget_defaults = dict(
     padding=3,
 )
 extension_defaults = widget_defaults.copy()
-
-groups = [Group(i) for i in "123"]
 
 # for i in groups:
 #    keys.extend([
