@@ -11,7 +11,8 @@ Installs automatically
  - bc (math in terminal)
  - xdg-utils (for setting up default apps)
  - nss (some basic libraries chromium doesn't work without)
-
+ - albert (rofi alternative)
+ - xwallpaper (sets wallpapers)
 
 <br>
 
@@ -19,6 +20,7 @@ Manual install
  - surf (web browser)
  - vimb (web browser)
  - ungoogled chromium (web browser)
+ - albert (command line)
 
 # Description
 
