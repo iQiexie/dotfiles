@@ -21,6 +21,7 @@ Manual install
  - ungoogled chromium (web browser)
  - albert (command line)
  - deepin-screenshot (screenshots)
+ - scrot (cli screenshot)
 
 # Description
 
