@@ -27,13 +27,13 @@ def move_current_window_to_screen(qtile, screen):
     screen_id = [2, 0, 1]
     group = qtile.screens[screen_id[screen]].group
     qtile.current_window.togroup(group.name)
+    
 
 
 def switch_screens(qtile):
     i = qtile.screens.index(qtile.current_screen)
     group = qtile.screens[i - 1].group
     qtile.current_screen.set_group(group)
-
 
 def window_to_next_screen(qtile):
     i = qtile.screens.index(qtile.current_screen)
@@ -157,8 +157,10 @@ def init_widgets(screen_id):
         widget.CurrentLayout(
         ),
 
+        widget.WindowCount(
+        ),
+
         widget.WindowName(
-            padding=10
         ),
 
         widget.Systray(
@@ -228,9 +230,6 @@ layouts = [
 # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
 #     desc="move focused window to group {}".format(i.name)),
 #    ])
-
-
-
 
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: List
