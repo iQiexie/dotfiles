@@ -21,6 +21,7 @@ Manual install
  - vimb (web browser)
  - ungoogled chromium (web browser)
  - albert (command line)
+ - deepin-screenshot (screenshots)
 
 # Description
 

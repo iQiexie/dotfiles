@@ -209,7 +209,7 @@ default_theme = {"border_width": 2,
                  }
 
 layouts = [
-    layout.MonadTall(**default_theme),
+    layout.Columns(**default_theme),
     layout.Max(**default_theme),
 ]
 
