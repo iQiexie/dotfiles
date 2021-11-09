@@ -192,7 +192,7 @@ def init_widgets(screen_id):
         widget.Clock(
             format='%d.%m.%Y %a %H:%M',
             foreground=colors[0],
-            background=colors[2],
+            background=colors[1],
             padding=10
         ),
     ]
