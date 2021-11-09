@@ -1,8 +1,8 @@
 # Software i use
 Installs automatically
- - zsh & zsh-syntax-highlighting
  - zip & unzip
- - xorg-xrandr & xorg-xwallpaper
+ - zsh & zsh-syntax-highlighting
+ - xorg-xrandr & xwallpaper
  - gst-plugins-good & gst-libav (for media decoding in minimal web browsers)
  - pulseaudio
  - ttf-font
