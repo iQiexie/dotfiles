@@ -12,6 +12,8 @@ when you have finally downloaded your package, run "sudo pacman -U {package name
 
 6. vscode launches on "code" command
 
+7. arecord -l and aplay -l for listing of capture and playback hardware devices
+
 
 Todo:
  - xbacklight nvidia
