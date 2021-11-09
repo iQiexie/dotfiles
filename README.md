@@ -1,19 +1,16 @@
 # Software i use
 Installs automatically
- - zsh
- - zsh-syntax-highlighting
- - ttf-font
- - xorg-xrandr
+ - zsh & zsh-syntax-highlighting
+ - zip & unzip
+ - xorg-xrandr & xorg-xwallpaper
  - gst-plugins-good & gst-libav (for media decoding in minimal web browsers)
  - pulseaudio
+ - ttf-font
  - qtile
  - alacritty (terminal)
  - bc (math in terminal)
  - xdg-utils (for setting up default apps)
  - nss (some basic libraries chromium doesn't work without)
- - xwallpaper (sets wallpapers)
- - zip (archiver)
- - unzip (archiver)
 
 <br>
 
