@@ -11,3 +11,10 @@ when you have finally downloaded your package, run "sudo pacman -U {package name
 5. in case if apps in the qtile tray are on different monitors, run meta+ctrl+r to reload qtile config
 
 6. vscode launches on "code" command
+
+
+Key bindings:
+
+Alacritty:
+ - ctrl+=, ctrl++ - increase fontsize (zoom in)
+ - ctrl+- - decrease fontsize (zoom out)

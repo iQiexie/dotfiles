@@ -11,8 +11,9 @@ Installs automatically
  - bc (math in terminal)
  - xdg-utils (for setting up default apps)
  - nss (some basic libraries chromium doesn't work without)
- - albert (rofi alternative)
  - xwallpaper (sets wallpapers)
+ - zip (archiver)
+ - unzip (archiver)
 
 <br>
 
