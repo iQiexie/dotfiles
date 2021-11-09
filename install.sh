@@ -25,7 +25,8 @@ cp shell_scripts/brightness.sh ~ &
 cp shell_scripts/logout.sh ~ &
 cp .vimrc ~ &
 cp .xinitrc ~ &
-cp .zshrc ~ 
+cp .zshrc ~ &
+cp nord.png ~
 
 echo [INSTALLER] CONFIGURING AUTOSTART
 exec sudo cp autostart_services/fixf.service /etc/systemd/system/fixf.service &
