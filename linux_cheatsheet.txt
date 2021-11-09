@@ -18,3 +18,4 @@ Key bindings:
 Alacritty:
  - ctrl+=, ctrl++ - increase fontsize (zoom in)
  - ctrl+- - decrease fontsize (zoom out)
+ - super+v - paste
