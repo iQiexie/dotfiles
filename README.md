@@ -5,6 +5,7 @@ Installs automatically
  - xorg-xrandr & xwallpaper
  - gst-plugins-good & gst-libav (for media decoding in minimal web browsers)
  - pulseaudio
+ - vim
  - ttf-font
  - qtile
  - alacritty (terminal)
