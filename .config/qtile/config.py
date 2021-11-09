@@ -55,7 +55,6 @@ def window_to_previous_screen(qtile):
 
 
 keys = [
-
     # Launch terminal, kill window, restart and exit Qtile
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
@@ -64,63 +63,42 @@ keys = [
 
     # Volume keys
     # Key([alt], "m", lazy.spawn("amixer -D pulse sset Master toggle")),
-    Key([], "KP_Add", lazy.spawn("amixer set Master playback 3+")),
-    Key([], "KP_Enter", lazy.spawn("amixer set Master playback 3-")),
+    Key([], "KP_Add", lazy.spawn("amixer set Master playback 3+"), desc="Increase Master volume"),
+    Key([], "KP_Enter", lazy.spawn("amixer set Master playback 3-"), desc="Decrease Master volume"),
 
     # Toggle window floating
     Key([mod, "shift"], "space", lazy.window.toggle_floating()),
 
-    # Switch between windows
-    Key([mod], "h", lazy.layout.left(), desc="Move focus to left"),
-    Key([mod], "l", lazy.layout.right(), desc="Move focus to right"),
-    Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
-    Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
-    Key([alt], "Tab", lazy.layout.next(),
-        desc="Move window focus to other window"),
+    # Move windows
+    Key([mod], "h", lazy.layout.grow_left(), desc="Grow (resize) window left"),
+    Key([mod], "l", lazy.layout.grow_right(), desc="Grow (resize) window right"),
+    Key([mod], "j", lazy.layout.grow_down(), desc="Grow (resize) window down"),
+    Key([mod], "k", lazy.layout.grow_up(), desc="Grow (resize) window up"),
+    Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
+    Key([alt], "Tab", lazy.layout.next(), desc="Move window focus to other window"),
 
     # Switch focus to a physical monitor (dual/triple set up)
-    Key([mod], "period", lazy.next_screen()),
-    Key([mod], "comma", lazy.prev_screen()),
-    Key([mod], "1", lazy.to_screen(2)),
-    Key([mod], "2", lazy.to_screen(0)),
-    Key([mod], "3", lazy.to_screen(1)),
+    Key([mod], "1", lazy.to_screen(2), desc="Switch focus to the 1st monitor"),
+    Key([mod], "2", lazy.to_screen(0), desc="Switch focus to the 2nd monitor"),
+    Key([mod], "3", lazy.to_screen(1), desc="Switch focus to the 3rd monitor"),
 
     # Move windows to different physical screens
-    # Key([mod, "shift"], "period", lazy.function(window_to_previous_screen)),
-    # Key([mod, "shift"], "comma", lazy.function(window_to_next_screen)),
-    Key([mod, "shift"], "1", lazy.function(move_current_window_to_screen, 0)),
-    Key([mod, "shift"], "2", lazy.function(move_current_window_to_screen, 1)),
-    Key([mod, "shift"], "3", lazy.function(move_current_window_to_screen, 2)),
-    Key([mod, "shift"], "t", lazy.function(switch_screens)),
+    Key([mod, "shift"], "1", lazy.function(move_current_window_to_screen, 0), desc="Move window to the 1st monitor"),
+    Key([mod, "shift"], "2", lazy.function(move_current_window_to_screen, 1), desc="Move window to the 2nd monitor"),
+    Key([mod, "shift"], "3", lazy.function(move_current_window_to_screen, 2), desc="Move window to the 3rd monitor"),
+    Key([mod, "shift"], "t", lazy.function(switch_screens), desc="Switch screens"),
 
     # Moving windows between left/right columns or move up/down in current stack.
-    Key([alt], "h", lazy.layout.shuffle_left(),
-        desc="Move window to the left"),
-    Key([alt], "l", lazy.layout.shuffle_right(),
-        desc="Move window to the right"),
-    Key([alt], "j", lazy.layout.shuffle_down(),
-        desc="Move window down"),
+    Key([alt], "h", lazy.layout.shuffle_left(), desc="Move window left"),
+    Key([alt], "l", lazy.layout.shuffle_right(), desc="Move window right"),
+    Key([alt], "j", lazy.layout.shuffle_down(), desc="Move window down"),
     Key([alt], "k", lazy.layout.shuffle_up(), desc="Move window up"),
 
-    # Reszie (grow) windows. If current window is on the edge of screen and direction
-    Key([mod], "h", lazy.layout.grow_left(),
-        desc="Grow window to the left"),
-    Key([mod], "l", lazy.layout.grow_right(),
-        desc="Grow window to the right"),
-    Key([mod], "j", lazy.layout.grow_down(),
-        desc="Grow window down"),
-    Key([mod], "k", lazy.layout.grow_up(), desc="Grow window up"),
-    Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
-
     # stack panels
-    Key([mod, "shift"], "Return", lazy.layout.toggle_split(),
-        desc="Toggle between split and unsplit sides of stack"),
+    Key([mod, "shift"], "Return", lazy.layout.toggle_split(), desc="Toggle between split and unsplit sides of stack"),
 
     # Toggle between different layouts as defined below
-    Key([mod], "space", lazy.next_layout(), desc="Toggle between layouts"),
-
-    # Key([mod], "r", lazy.spawncmd(),
-    #    desc="Spawn a command using a prompt widget"),
+    Key([mod], "space", lazy.next_layout(), desc="Toggle between layouts (maximize window)"),
 ]
 
 # ....!!!!....
