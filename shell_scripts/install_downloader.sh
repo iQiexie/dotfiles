@@ -8,4 +8,5 @@
 # xdg-utils -sets up browser by default
 # nss - some basic libraries chromium doesn't work without
 # xwallpaper - sets wallpaper
-sudo pacman -S --noconfirm vim htop qtile zsh zsh-syntax-highlighting ttf-font xorg-xrandr xwallpaper alacritty gst-plugins-good gst-libav pulseaudio alsa-utils bc xdg-utils nss zip unzip
+# copyq clipboard manager
+sudo pacman -S --noconfirm vim htop qtile zsh zsh-syntax-highlighting ttf-font xorg-xrandr xwallpaper alacritty gst-plugins-good gst-libav pulseaudio alsa-utils bc xdg-utils nss zip unzip copyq

@@ -19,6 +19,7 @@ echo [INSTALLER] COPYING ALL MY PERSONAL SCRIPTS AND CONFIG FILES
 cp -r .config/htop ~/.config/ &
 cp -r .config/qtile ~/.config/ &
 cp -r .config/albert ~/.config/ &
+cp .config/copyq/copyq.conf ~/.config/copyq/copyq.conf
 cp shell_scripts/xlayout.sh ~ &
 cp shell_scripts/kblayout.sh ~ &
 cp shell_scripts/brightness.sh ~ &
