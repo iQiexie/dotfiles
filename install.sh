@@ -10,6 +10,7 @@ echo [INSTALLER] CONFIGURING GIT
 git config --global user.name "Neykuratick"
 git config --global user.email "neykuratick@yahoo.com"
 git config --global credential.helper cache
+git config --global credential.helper 'cache --timeout=0' 
 
 #echo [INSTALLER] MAKING ZSH DEFAULT SHELL
 #exec chsh -s $(which zsh
