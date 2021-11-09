@@ -13,6 +13,9 @@ when you have finally downloaded your package, run "sudo pacman -U {package name
 6. vscode launches on "code" command
 
 
+Todo:
+ - xbacklight nvidia
+
 Key bindings:
 
 Alacritty:

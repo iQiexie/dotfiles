@@ -131,12 +131,15 @@ dark_background = "#202a3b"
 bright_foreground = "#ffffff"
 clock_background = "#35425c"
 
+basic_green = "#3bff90"
+basic_red = "#ff004c"
+
 colors = [
     [bright_foreground, bright_foreground],  # 0
     [dark_background, dark_background],  # 1
     [clock_background, clock_background],  # 2
-    ["#bf616a", "#bf616a"],  # 3 red
-    ["#a3be8c", "#a3be8c"],  # 4 green
+    [basic_red, basic_red],  # 3 red
+    [basic_green, basic_green],  # 4 green
     ["#ebcb8b", "#ebcb8b"],  # 5 yellow
     ["#81a1c1", "#81a1c1"],  # 6 blue
     ["#e5e9f0", "#e5e9f0"],  # 7 white
@@ -161,8 +164,13 @@ extension_defaults = widget_defaults.copy()
 
 def init_widgets(screen_id):
     return [
+        widget.CurrentScreen(
+            padding=10,
+	    active_color=basic_green.split("#")[1],
+	    inactive_color=basic_red.split("#")[1]
+        ),
+
         widget.CurrentLayout(
-            padding=10
         ),
 
         widget.WindowName(
@@ -172,9 +180,13 @@ def init_widgets(screen_id):
         widget.Systray(
         ),
 
-        widget.TextBox(
-            f"Screen {screen_id}",
-            padding=30
+        widget.Volume(
+            padding=10
+        ),
+
+        widget.Clipboard(
+            padding=10,
+	    timeout=1
         ),
 
         widget.Clock(
