@@ -66,7 +66,8 @@ export LS_COLORS="di=1;34:ln=0:so=0:pi=0:ex=1;31:bd=0:cd=0:su=0:sg=0:tw=0:ow=0"
 
 
 # Aliases
-alias ls="ls --color"
+alias ls="ls -a --color --group-directories-first"
+alias lsa="ls -l"
 alias chrome="chromium"
 alias untar="tar xvf"
 alias albert="albert & disown"
