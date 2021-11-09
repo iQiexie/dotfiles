@@ -66,9 +66,6 @@ keys = [
     Key([], "KP_Add", lazy.spawn("amixer set Master playback 3+"), desc="Increase Master volume"),
     Key([], "KP_Enter", lazy.spawn("amixer set Master playback 3-"), desc="Decrease Master volume"),
 
-    # Toggle window floating
-    Key([mod, "shift"], "space", lazy.window.toggle_floating()),
-
     # Move windows
     Key([mod], "h", lazy.layout.grow_left(), desc="Grow (resize) window left"),
     Key([mod], "l", lazy.layout.grow_right(), desc="Grow (resize) window right"),
@@ -99,6 +96,15 @@ keys = [
 
     # Toggle between different layouts as defined below
     Key([mod], "space", lazy.next_layout(), desc="Toggle between layouts (maximize window)"),
+]
+
+# Mouse bindings
+mouse = [
+    Drag([mod], "Button1", lazy.window.set_position_floating(),
+         start=lazy.window.get_position()),
+    Drag([mod], "Button3", lazy.window.set_size_floating(),
+         start=lazy.window.get_size()),
+    Click([mod], "Button2", lazy.window.toggle_floating()),
 ]
 
 # ....!!!!....
@@ -189,7 +195,7 @@ screens = [
 ]
 
 # ....!!!!....
-""" FUCKING WASTE """
+""" My precious Screens """
 # ....!!!!....
 
 default_theme = {"border_width": 2,
@@ -202,6 +208,11 @@ layouts = [
     layout.Columns(**default_theme),
     layout.Max(**default_theme),
 ]
+
+# ....!!!!....
+""" FUCKING WASTE """
+# ....!!!!....
+
 
 # for i in groups:
 #    keys.extend([
@@ -219,14 +230,7 @@ layouts = [
 #    ])
 
 
-# Drag floating layouts.
-mouse = [
-    Drag([mod], "Button1", lazy.window.set_position_floating(),
-         start=lazy.window.get_position()),
-    Drag([mod], "Button3", lazy.window.set_size_floating(),
-         start=lazy.window.get_size()),
-    Click([mod], "Button2", lazy.window.bring_to_front())
-]
+
 
 dgroups_key_binder = None
 dgroups_app_rules = []  # type: List
