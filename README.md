@@ -1,21 +1,3 @@
-# How to install
-```
-cd dotfiles
-./install.sh
-cd shell_scripts
-
-cd shell_scripts
-mkdir temp
-cp install_yay temp
-cd temp
-./install_yay
-cd ..
-rm -rf temp
-
-yay -S albert
-reboot
-```
-
 # Software i use
 Installs automatically
  - zip & unzip
@@ -74,4 +56,21 @@ cd temp
 ./install_yay
 cd ..
 rm -rf temp
+```
+# How to install on fresh arch
+```
+cd dotfiles
+./install.sh
+cd shell_scripts
+
+cd shell_scripts
+mkdir temp
+cp install_yay temp
+cd temp
+./install_yay
+cd ..
+rm -rf temp
+
+yay -S albert
+reboot
 ```
