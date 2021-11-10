@@ -20,7 +20,7 @@ Manual install
  - surf (web browser)
  - vimb (web browser)
  - ungoogled chromium (web browser)
- - albert (command line)
+ - albert-bin (command line)
  - deepin-screenshot (screenshots)
  - scrot (cli screenshot)
 
@@ -71,6 +71,6 @@ cd temp
 cd ..
 rm -rf temp
 
-yay -S albert
+yay -S albert-bin
 reboot
 ```
