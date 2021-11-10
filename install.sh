@@ -12,16 +12,11 @@ git config --global user.email "neykuratick@yahoo.com"
 git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=0' 
 
-#echo [INSTALLER] MAKING ZSH DEFAULT SHELL
-#exec chsh -s $(which zsh
+echo [INSTALLER] MAKING ZSH DEFAULT SHELL
+exec chsh -s $(which zsh)
 
 echo [INSTALLER] COPYING ALL MY PERSONAL SCRIPTS AND CONFIG FILES
-cp -r .config/alacritty ~/.config/ &
-cp -r .config/albert ~/.config/ &
-cp -r .config/copyq ~/.config &
-cp -r .config/htop ~/.config/ &
-cp -r .config/obs-studio ~/.config &
-cp -r .config/qtile ~/.config/ &
+cp -r .config ~ &
 cp shell_scripts/xlayout.sh ~ &
 cp shell_scripts/kblayout.sh ~ &
 cp shell_scripts/brightness.sh ~ &
