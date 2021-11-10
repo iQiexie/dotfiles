@@ -72,5 +72,8 @@ cd ..
 rm -rf temp
 
 yay -S albert-bin
+cd ..
+cd ..
+cp dotfiles/.config .
 reboot
 ```
