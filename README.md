@@ -23,6 +23,7 @@ Manual install
  - albert-bin (command line)
  - deepin-screenshot (screenshots)
  - scrot (cli screenshot)
+ - keepassxc (password manager)
 
 # Description
 
