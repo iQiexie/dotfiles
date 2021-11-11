@@ -14,6 +14,7 @@ when you have finally downloaded your package, run "sudo pacman -U {package name
 
 7. arecord -l and aplay -l for listing of capture and playback hardware devices
 
+8. fixing audio not working tutorial https://superuser.com/questions/626606/how-to-make-alsa-pick-a-preferred-sound-device-automatically
 
 Todo:
  - xbacklight nvidia
