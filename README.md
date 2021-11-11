@@ -25,12 +25,20 @@ Manual install
  - scrot (cli screenshot)
  - keepassxc (password manager)
 
+<br>
+
+Web providers:
+ - cock.li
+ - protonmailb
+
 # Description
 
 Chromium extensions:
  - Adblock Plus
  - Chromium Web Store <span class="external-link"><a href="https://github.com/NeverDecaf/chromium-web-store" target="_blank">how to set up</a></span>
  - SponsorBlock for YouTube - Skip Sponsorships
+ - AutoScroll
+ - KeePassXC-Browser
 
 <br>
 

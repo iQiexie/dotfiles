@@ -16,6 +16,8 @@ when you have finally downloaded your package, run "sudo pacman -U {package name
 
 8. fixing audio not working tutorial https://superuser.com/questions/626606/how-to-make-alsa-pick-a-preferred-sound-device-automatically
 
+9. https://searx.github.io/searx/user/search_syntax.html Searx shortcuts
+
 Todo:
  - xbacklight nvidia
 
