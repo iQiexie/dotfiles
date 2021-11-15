@@ -1,3 +1,8 @@
+pacman speeding up: sudo pacman-optimize
+
+0.0 Installing .tar.gz apps https://www.howtogeek.com/423866/how-to-install-and-use-the-tor-browser-on-linux/
+
+
 1. {some app} & disown - To run an app without holding up the terminal
 https://unix.stackexchange.com/questions/200169/run-application-without-holding-up-terminal
 
@@ -16,10 +21,13 @@ when you have finally downloaded your package, run "sudo pacman -U {package name
 
 8. fixing audio not working tutorial https://superuser.com/questions/626606/how-to-make-alsa-pick-a-preferred-sound-device-automatically
 
+run alsamixer for device ids
+
 9. https://searx.github.io/searx/user/search_syntax.html Searx shortcuts
 
 Todo:
  - xbacklight nvidia
+ - make shortcut obs --scene Desktop1 --startrecording
 
 Key bindings:
 

@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+
 
 from typing import List  # noqa: F401
 from libqtile import bar, layout, widget
@@ -150,18 +150,20 @@ def init_widgets(screen_id):
     return [
         widget.CurrentScreen(
             padding=10,
-	    active_color=basic_green.split("#")[1],
-	    inactive_color=basic_red.split("#")[1]
+	    	active_color=basic_green.split("#")[1],
+	    	inactive_color=basic_red.split("#")[1]
         ),
 
         widget.CurrentLayout(
         ),
 
-        widget.WindowCount(
-        ),
-
-        widget.WindowName(
-        ),
+		#widget.WindowName(
+		#	max_chars=15
+		#),
+		
+		widget.TaskList(
+			max_title_width=150
+		),
 
         widget.Systray(
         ),
@@ -172,7 +174,7 @@ def init_widgets(screen_id):
 
         widget.Clipboard(
             padding=10,
-	    timeout=1
+	    	timeout=1,
         ),
 
         widget.Clock(
@@ -247,7 +249,7 @@ floating_layout = layout.Floating(float_rules=[
     Match(title='pinentry'),  # GPG key password entry
 ])
 auto_fullscreen = True
-focus_on_window_activation = "smart"
+focus_on_window_activation = "urgent"
 reconfigure_screens = True
 
 # If things like steam games want to auto-minimize themselves when losing
