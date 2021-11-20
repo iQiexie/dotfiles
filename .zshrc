@@ -72,7 +72,8 @@ alias lsa="ls -gh"
 alias chrome="chromium"
 alias untar="tar xvf"
 alias albert="albert & disown"
-
+alias docker="sudo docker"
+alias docker-compose="sudo docker-compose"
 
 
 neofetch

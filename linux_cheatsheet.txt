@@ -25,6 +25,12 @@ run alsamixer for device ids
 
 9. https://searx.github.io/searx/user/search_syntax.html Searx shortcuts
 
+10. ranger -> press Z -> press H. To show hidden files
+
+11. installing games in lutris https://forums.lutris.net/t/very-brief-tutorial-on-manually-installing-a-game-in-lutris/2028
+
+12. java package for minecraft is jdk-adoptopenjdk
+
 Todo:
  - xbacklight nvidia
  - make shortcut obs --scene Desktop1 --startrecording

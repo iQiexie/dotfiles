@@ -6,4 +6,6 @@ exec ~/xlayout.sh &
 xwallpaper --zoom nord.png &
 
 qtile start &
-albert
+albert &
+copyq &
+keepassxc
