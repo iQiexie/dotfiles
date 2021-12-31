@@ -76,4 +76,6 @@ alias docker="sudo docker"
 alias docker-compose="sudo docker-compose"
 
 
+compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
+
 neofetch

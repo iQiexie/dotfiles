@@ -24,6 +24,7 @@ Manual install
  - deepin-screenshot (screenshots)
  - scrot (cli screenshot)
  - keepassxc (password manager)
+ - ubuntu-characters (emoji keyboard)
 
 <br>
 

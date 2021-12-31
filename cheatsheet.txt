@@ -1,6 +1,8 @@
 pacman speeding up: sudo pacman-optimize
 
 0.0 Installing .tar.gz apps https://www.howtogeek.com/423866/how-to-install-and-use-the-tor-browser-on-linux/
+0.1 Setting up default apps: https://askubuntu.com/questions/1219614/xdg-open-doesnt-do-anything-zoom-in-chromium https://www.maketecheasier.com/create-desktop-file-linux/
+
 
 
 1. {some app} & disown - To run an app without holding up the terminal
@@ -34,10 +36,26 @@ run alsamixer for device ids
 Todo:
  - xbacklight nvidia
  - make shortcut obs --scene Desktop1 --startrecording
+ - https://www.youtube.com/watch?v=tnspdGZGEPE&ab_channel=BrodieRobertson keep home clean. zshenv vars
+
 
 Key bindings:
 
-Alacritty:
+Alacritty: (path to config file)
  - ctrl+=, ctrl++ - increase fontsize (zoom in)
  - ctrl+- - decrease fontsize (zoom out)
  - super+v - paste
+
+vim: ~/.vimrc
+
+
+## Setting up default apps:
+
+xdg-mime query default <MIMETYPE> - To see the default app for a fyletype
+	example: xdg-mime query default image/png
+
+xdg-mime query filetype <file name> - To see the MIMETYPE  of a particular file (alternative: https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types) 
+	example: xdg-mime query filetype image.png
+
+xdg-mime default <app>.desktop <MIMETYPE> - To set an app by default for the specific MIMETYPE
+	example xdg-mime default feh.desktop image/png
