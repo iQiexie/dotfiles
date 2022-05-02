@@ -1,10 +1,10 @@
 #!/bin/bash  
 
 echo [INSTALLER] DOWNLOADING SOFTWARE
-source shell_scripts/install_downloader.sh
+#source shell_scripts/install_downloader.sh
 
 echo [INSTALLER] SETTING UP AUDIO
-exec sudo alsactl restore &
+#exec sudo alsactl restore &
 
 echo [INSTALLER] CONFIGURING GIT
 git config --global user.name "Neykuratick"
@@ -13,7 +13,7 @@ git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=0' 
 
 echo [INSTALLER] MAKING ZSH DEFAULT SHELL
-exec chsh -s $(which zsh)
+#exec chsh -s $(which zsh)
 
 echo [INSTALLER] COPYING ALL MY PERSONAL SCRIPTS AND CONFIG FILES
 cp -r .config ~ &
