@@ -87,3 +87,10 @@ cd ..
 cp dotfiles/.config .
 reboot
 ```
+
+
+# Configuration files
+
+- Autostart programms are configured here ``` ~/.config/qtile/autoshart.sh ```
+- HotKeys are binded kere ``` .xbindkeysrc ```
+- Aliases are set here ``` .zshrc ``` in "Aliases" section
