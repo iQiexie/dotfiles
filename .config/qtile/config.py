@@ -1,10 +1,20 @@
 
 
 from typing import List  # noqa: F401
-from libqtile import bar, layout, widget
+from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
+import os
+import subprocess
+
+
+
+@hook.subscribe.startup_once
+def autostart():
+	home = os.path.expanduser('~/.config/qtile/autostart.sh')
+	subprocess.run([home])
+
 
 # -- GLOBAL VARIABLES --
 
@@ -165,8 +175,8 @@ def init_widgets(screen_id):
 			max_title_width=150
 		),
 
-        widget.Systray(
-        ),
+		widget.Systray(
+		),
 
         widget.Volume(
             padding=10

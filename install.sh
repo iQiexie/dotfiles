@@ -26,6 +26,9 @@ cp .xinitrc ~ &
 cp .zshrc ~ &
 cp nord.png ~
 
+echo [INSTALLER] SETTING UP SYSTEM FOLDERS
+mkdir ~/.cache/zsh
+
 echo [INSTALLER] CONFIGURING AUTOSTART
 exec sudo cp autostart_services/fixf.service /etc/systemd/system/fixf.service &
 exec sudo cp shell_scripts/fixf.sh /usr/bin/fixf.sh &

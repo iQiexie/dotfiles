@@ -8,6 +8,7 @@ PS1='[%n@arch %~]$ %b'
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
+setopt SHARE_HISTORY
 
 # Basic auto/tab complete:
 autoload -U compinit
@@ -62,7 +63,6 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 # Configuring colors used by 'ls' command
 # https://geoff.greer.fm/lscolors/
-export LS_COLORS="di=1;34:ln=0:so=0:pi=0:ex=1;31:bd=0:cd=0:su=0:sg=0:tw=0:ow=0"
 
 
 # Aliases
@@ -76,6 +76,18 @@ alias docker="sudo docker"
 alias docker-compose="sudo docker-compose"
 
 
+export PATH="$PATH:/home/roman/.local/bin"
+export NO_AT_BRIDGE=1
+eval $(dbus-launch --sh-syntax)
+export DBUS_SESSION_BUS_ADDRESS
+export DBUS_SESSION_BUS_PID
+export LS_COLORS="di=1;34:ln=0:so=0:pi=0:ex=1;31:bd=0:cd=0:su=0:sg=0:tw=0:ow=0"
+export WINEESYNC=1
+
+export DBUS_SESSION_BUS_WINDOWID
+
 compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
+
+setopt APPEND_HISTORY
 
 neofetch
