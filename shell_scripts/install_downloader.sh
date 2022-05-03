@@ -9,4 +9,9 @@
 # nss - some basic libraries chromium doesn't work without
 # xwallpaper - sets wallpaper
 # copyq clipboard manager
-sudo pacman -S --noconfirm vim htop qtile zsh zsh-syntax-highlighting ttf-font xorg-xrandr xwallpaper alacritty gst-plugins-good gst-libav pulseaudio alsa-utils bc xdg-utils nss zip unzip copyq obs-studio neofetch
+
+# programs
+sudo pacman -S --noconfirm vim htop xwalllpaper alacritty copyq obs-studio keepassxc zip unzip neofetch qtile xbindkeys emote
+
+# dependencies
+sudo pacman -S --noconfirm zsh zsh-syntax-highlighting ttf-liberation xorg-xrandr gst-plugins-good gst-libav pulseaudio alsa-utils bc xdg-utils nss fuse

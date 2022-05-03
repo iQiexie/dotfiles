@@ -3,10 +3,6 @@ vmap <C-S-v> "+p
 syntax on
 filetype indent on
 
-call plug#begin('~/local/share/nvim/plugged')
-Plug 'mg979/vim-visual-multi'
-call plug#end()
-
 nnoremap {C-k} :<c-u>call MultiCursorPlaceCursor()<cr>
 
 set tabstop=4
@@ -36,3 +32,4 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 "Their path /usr/share/vim/vim82/colors/
 colorscheme elflord
 
+set clipboard=unnamedplus

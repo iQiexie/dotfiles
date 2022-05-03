@@ -25,6 +25,9 @@ when you have finally downloaded your package, run "sudo pacman -U {package name
 
 run alsamixer for device ids
 
+there are channels in alsamixer displayed under the sound sources. Make sure it's not muted (press M) and make sure it's not true that inly left or right channel is muted (OM, MO, MM)
+It might be diffficult to see letters (especially "O", but they're there)
+
 9. https://searx.github.io/searx/user/search_syntax.html Searx shortcuts
 
 10. ranger -> press Z -> press H. To show hidden files
