@@ -1,6 +1,3 @@
-
-# Sections
-
 ## FAQ
 
 ### Beginner Linux Tips
@@ -17,6 +14,10 @@
 
 - To install a binary of some sort instead of searching for appimage search for "bin" version. Then, when you have finally downloaded your package, run ``` sudo pacman -U {package name} ```
 
+### Vim
+
+- Search and replace guide https://vim.fandom.com/wiki/Search_and_replace
+
 
 ### Possible problems and solutions
 
@@ -26,6 +27,16 @@
 
 	there are channels in alsamixer displayed under the sound sources. Make sure it's not muted (press M) and make sure it's not true that inly left or right channel is muted (OM, MO, MM)
 	It might be diffficult to see letters (especially "O", but they're there)
+
+### MPV
+
+- Spacebar, Right Mouse - toggle pause
+
+- Enter - next video in the playlist
+
+- [, ] - speed
+
+- Backspade - reset speed
 
 
 ### Qtile related
@@ -50,12 +61,14 @@
 
 - java package for minecraft is jdk-adoptopenjdk
 
+- if pip install throws "TypeError: SafeFileCache.set() got an unexpected keyword argument 'expires'" exception, run ``` rm -rf ~/.local/lib/python3.10 ```
+
 
 ## Key bindings
 
 ### Alacritty
 
-config: ``` (path to config file) ```
+config: ``` ~/.config/alacritty/alacritty.yml  ```
  - ctrl+=, ctrl++ - increase fontsize (zoom in)
  - ctrl+- - decrease fontsize (zoom out)
  - super+v - paste

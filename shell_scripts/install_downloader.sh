@@ -9,9 +9,11 @@
 # nss - some basic libraries chromium doesn't work without
 # xwallpaper - sets wallpaper
 # copyq clipboard manager
+# peerflix streams media content directly from torrent link
+# pirate-get searches for torrent links
 
 # programs
-sudo pacman -S --noconfirm vim htop xwalllpaper alacritty copyq obs-studio keepassxc zip unzip neofetch qtile xbindkeys emote
+sudo pacman -S --noconfirm vim htop xwalllpaper alacritty copyq obs-studio keepassxc zip unzip neofetch qtile xbindkeys emote peerflix pirate-get
 
 # dependencies
 sudo pacman -S --noconfirm zsh zsh-syntax-highlighting ttf-liberation xorg-xrandr gst-plugins-good gst-libav pulseaudio alsa-utils bc xdg-utils nss fuse

@@ -1,9 +1,15 @@
+call plug#begin('~/.vim/plugins')
+
+Plug 'junegunn/vim-easy-align'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+"Plug 'Rip-Rip/clang_complete'
+
+call plug#end()
+
 vmap <C-S-c> "+y
 vmap <C-S-v> "+p
 syntax on
 filetype indent on
-
-nnoremap {C-k} :<c-u>call MultiCursorPlaceCursor()<cr>
 
 set tabstop=4
 set number "Display lines's id
@@ -33,3 +39,9 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 colorscheme elflord
 
 set clipboard=unnamedplus
+
+
+" vim-easy-allign
+nmap ga <Plug>(EasyAlign)
+
+set mouse=a
