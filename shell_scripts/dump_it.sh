@@ -22,4 +22,5 @@ cp -r ~/.config/nvim ~/dotfiles/.config
 cp -r ~/.config/obs-studio/basic ~/dotfiles/.config/obs-studio/
 cp -r ~/.config/obs-studio/plugin_config ~/dotfiles/.config/obs-studio/
 cp -r ~/.config/obs-studio/global.ini ~/dotfiles/.config/obs-studio/global.ini
+cp -r ~/.config/albert/org.albert.extension.websearch ~/dotfiles/.config/albert/
 
