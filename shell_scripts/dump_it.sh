@@ -3,17 +3,23 @@ cp ~/.vimrc ~/dotfiles
 cp ~/.xinitrc ~/dotfiles
 cp ~/.xbindkeysrc ~/dotfiles
 cp ~/kblayout.sh ~/dotfiles/shell_scripts/
+
 cp ~/.config/albert/albert.conf ~/dotfiles/.config/albert/albert.conf
-cp -r ~/.config/dunst ~/dotfiles/.config/dunst
-cp -r ~/.config/alacritty/ ~/dotfiles/.config/alacritty
-cp -r ~/.config/copyq ~/dotfiles/.config/copyq
-cp -r ~/.config/flameshot ~/dotfiles/.config/flameshot
-cp -r ~/.config/htop ~/dotfiles/.config/htop
-cp -r ~/.config/keepassxc ~/dotfiles/.config/keepassxc
-cp -r ~/.config/mpv ~/dotfiles/.config/mpv
-cp -r ~/.config/neofetch ~/dotfiles/.config/neofetch
-cp -r ~/.config/nvim ~/dotfiles/.config/nvim
-cp -r ~/.config/obs-studio ~/dotfiles/.config/obs-studio
-cp -r ~/.config/qtile ~/dotfiles/.config/qtile
-cp -r ~/.config/nvim ~/dotfiles/.config/nvim
+cp ~/.config/copyq/copyq-commands.ini ~/dotfiles/.config/copyq/copyq-commands.ini
+cp ~/.config/copyq/copyq.conf ~/dotfiles/.config/copyq/copyq.conf
+cp ~/.config/copyq/copyq_tabs.ini ~/dotfiles/.config/copyq/copyq_tabs.ini
+
+cp -r ~/.config/dunst ~/dotfiles/.config
+cp -r ~/.config/alacritty/ ~/dotfiles/.config
+cp -r ~/.config/flameshot ~/dotfiles/.config
+cp -r ~/.config/htop ~/dotfiles/.config
+cp -r ~/.config/keepassxc ~/dotfiles/.config
+cp -r ~/.config/mpv ~/dotfiles/.config
+cp -r ~/.config/neofetch ~/dotfiles/.config
+cp -r ~/.config/nvim ~/dotfiles/.config
+cp -r ~/.config/qtile ~/dotfiles/.config
+cp -r ~/.config/nvim ~/dotfiles/.config
+cp -r ~/.config/obs-studio/basic ~/dotfiles/.config/obs-studio/
+cp -r ~/.config/obs-studio/plugin_config ~/dotfiles/.config/obs-studio/
+cp -r ~/.config/obs-studio/global.ini ~/dotfiles/.config/obs-studio/global.ini
 
