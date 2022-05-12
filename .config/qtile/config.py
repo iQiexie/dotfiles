@@ -37,6 +37,7 @@ def move_current_window_to_screen(qtile, screen):
     screen_id = [2, 0, 1]
     group = qtile.screens[screen_id[screen]].group
     qtile.current_window.togroup(group.name)
+    lazy.to_screen(0)
     
 
 
