@@ -1,5 +1,4 @@
 # Luke's config for the Zoomer Shell
-# test
 
 # Enable colors and change prompt:
 #autoload -U colors && colors
@@ -77,8 +76,8 @@ alias docker="sudo docker"
 alias docker-compose="sudo docker-compose"
 alias xdg="xdg-mime"
 alias xgd="xdg-mime"
-
 alias ciget="pirate-get -C \"peerflix %s --mpv --all -- --fs\""
+alias rm="trash"
 
 
 export PATH="$PATH:/home/roman/.local/bin"
@@ -89,11 +88,10 @@ export DBUS_SESSION_BUS_PID
 export LS_COLORS="di=1;34:ln=0:so=0:pi=0:ex=1;31:bd=0:cd=0:su=0:sg=0:tw=0:ow=0"
 export WINEESYNC=1
 export TERM=xterm-256color # Fix mouse=a in allacrity vim
-
 export DBUS_SESSION_BUS_WINDOWID
 
 compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
 
 setopt APPEND_HISTORY
 
-neofetch
+#neofetch

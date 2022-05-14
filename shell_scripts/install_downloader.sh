@@ -13,7 +13,7 @@
 # pirate-get searches for torrent links
 
 # programs
-sudo pacman -S --noconfirm vim htop xwalllpaper alacritty copyq obs-studio keepassxc zip unzip neofetch qtile xbindkeys emote peerflix pirate-get
+sudo pacman -S --noconfirm vim htop xwalllpaper alacritty copyq obs-studio keepassxc zip unzip neofetch qtile xbindkeys emote peerflix pirate-get trash-cli
 
 # dependencies
 sudo pacman -S --noconfirm zsh zsh-syntax-highlighting ttf-liberation xorg-xrandr gst-plugins-good gst-libav pulseaudio alsa-utils bc xdg-utils nss fuse noto-fonts-emoji
