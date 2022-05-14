@@ -14,6 +14,15 @@
 
 - To install a binary of some sort instead of searching for appimage search for "bin" version. Then, when you have finally downloaded your package, run ``` sudo pacman -U {package name} ```
 
+#### Setting up default apps:
+
+``` xgd-mime query filetype /home/roman/file ``` - to get xdg filetype
+
+``` xdg-mime query default inode/directory ``` - to get the default app assigned to the filetype. Use insdead of "inode/directory" use your filetype
+
+``` xdg-mime default pcmanfm.desktop inode/directory ``` - to set the default app (pcmanfm) for the filetype (inode/directory)
+
+
 ### Vim
 
 - Search and replace guide https://vim.fandom.com/wiki/Search_and_replace

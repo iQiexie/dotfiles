@@ -3,3 +3,6 @@
 
 "emote"
 	mod4 + period
+
+"flameshot gui -c"
+	mod4 + s

@@ -75,6 +75,8 @@ alias untar="tar xvf"
 alias albert="albert & disown"
 alias docker="sudo docker"
 alias docker-compose="sudo docker-compose"
+alias xdg="xdg-mime"
+alias xgd="xdg-mime"
 
 alias ciget="pirate-get -C \"peerflix %s --mpv --all -- --fs\""
 
