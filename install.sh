@@ -24,7 +24,7 @@ cp shell_scripts/logout.sh ~ &
 cp .vimrc ~ &
 cp .xinitrc ~ &
 cp .zshrc ~ &
-cp nord.png ~
+cp nord.png ~/.config
 
 echo [INSTALLER] SETTING UP SYSTEM FOLDERS
 mkdir ~/.cache/zsh

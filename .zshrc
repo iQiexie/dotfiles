@@ -14,7 +14,7 @@ setopt SHARE_HISTORY
 autoload -U compinit
 zstyle ':completion:*' menu select
 zmodload zsh/complist
-compinit
+compinit -d /tmp/zcompdump
 _comp_options+=(globdots)		# Include hidden files.
 
 # vi mode
@@ -90,7 +90,19 @@ export WINEESYNC=1
 export TERM=xterm-256color # Fix mouse=a in allacrity vim
 export DBUS_SESSION_BUS_WINDOWID
 
-compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
+
+# Stop littering $HOME folder
+# https://wiki.archlinux.org/title/XDG_Base_Directory
+export LESSHISTFILE=- # Remove .lesshst file from ~
+export XDG_CONFIG_HOME=${XDG_CONFIG_HOME:=${HOME}/.config}
+export XDG_CACHE_HOME=${XDG_CACHE_HOME:=${HOME}/.cache}
+export XDG_DATA_HOME=${XDG_DATA_HOME:=${HOME}/.local/share}
+export XDG_STATE_HOME=${XDG_STATE_HOME:=${HOME}/.local/share}
+
+export GRIPHOME="$XDG_CONFIG_HOME/grip"
+export XAUTHORITY="$XDG_CONFIG_HOME"/.Xauthority
+export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+#export GNUPGHOME="$XDG_DATA_HOME"/gnupg, gpg2 --homedir "$XDG_DATA_HOME"/gnupg
 
 setopt APPEND_HISTORY
 

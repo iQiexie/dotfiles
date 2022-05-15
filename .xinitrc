@@ -5,5 +5,5 @@ xrandr --auto
 
 exec ~/kblayout.sh &
 exec ~/xlayout.sh &
-xwallpaper --zoom nord.png &
+xwallpaper --zoom ~/.config/nord.png &
 exec qtile start

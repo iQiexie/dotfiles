@@ -16,6 +16,7 @@ set number "Display lines's id
 set wildmenu "Autocompletion in vim command line
 set incsearch "To start highlighting as soon as you start typing for search
 "set hlsearch "Highlights everything till the end of the session. Type :noh to clean
+set viminfo+=n~/.vim/viminfo " Move .viminfo file to .vim folder
 
 
 " MY KEYBINDINGS

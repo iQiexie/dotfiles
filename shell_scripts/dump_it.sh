@@ -12,6 +12,7 @@ cp ~/.config/obs-studio/basic/scenes/Untitled.json ~/dotfiles/.config/obs-studio
 cp ~/.config/obs-studio/basic/profiles/Untitled/basic.ini ~/dotfiles/.config/obs-studio/basic/profiles/Untitled/basic.ini
 cp ~/.config/qtile/config.py ~/dotfiles/.config/qtile
 cp ~/.config/qtile/autostart.sh ~/dotfiles/.config/qtile
+cp ~/.config/pulse/client.conf ~/dotfiles/.config/pulse
 
 cp -r ~/.config/dunst ~/dotfiles/.config
 cp -r ~/.config/alacritty/ ~/dotfiles/.config

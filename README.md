@@ -1,53 +1,44 @@
-# Software i use
-Installs automatically
- - zip & unzip
+# Software I use
+
+### Installs automatically
  - zsh & zsh-syntax-highlighting
- - xorg-xrandr & xwallpaper
+ - xorg-xrandr
  - gst-plugins-good & gst-libav (for media decoding in minimal web browsers)
  - pulseaudio
- - vim
- - ttf-font
- - qtile
+ - obs-studio
+ - vim & nvim (vim mostly)
+ - qtile (window manager)
  - alacritty (terminal)
  - bc (math in terminal)
  - xdg-utils (for setting up default apps)
  - nss (some basic libraries chromium doesn't work without)
- - obs-studio
-
-<br>
-
-Manual install
  - surf (web browser)
- - vimb (web browser)
  - ungoogled chromium (web browser)
+
+### Software I'm currently trying to use
+ - vimb (web browser)
  - albert-bin (command line)
  - deepin-screenshot (screenshots)
  - scrot (cli screenshot)
  - keepassxc (password manager)
  - ubuntu-characters (emoji keyboard)
+ - emote (emoji keyboard)
+ - grip (realtime .md renderer)
 
-<br>
-
-Web providers:
- - cock.li
- - protonmailb
-
-# Description
-
-Chromium extensions:
+### Chromium extensions:
  - Adblock Plus
  - Chromium Web Store <span class="external-link"><a href="https://github.com/NeverDecaf/chromium-web-store" target="_blank">how to set up</a></span>
  - SponsorBlock for YouTube - Skip Sponsorships
  - AutoScroll
  - KeePassXC-Browser
 
-<br>
-
-Personal shell scripts:
+### Personal shell scripts:
  - brightness.sh controls screen brightness. <br>
    Usage: ```./brightness.sh {desired brightness in percents} ```
  - fixf.sh fixes F-keys for Keychrone keyboards
  - xlayout.sh sets display layout for x server
+
+More details in ./shell_scripts/readme.md
 
 # How to install automatically
 Run installer script: 
@@ -67,6 +58,7 @@ cd temp
 cd ..
 rm -rf temp
 ```
+
 # How to install on fresh arch
 ```
 cd dotfiles
