@@ -8,7 +8,7 @@ cp ~/.config/albert/albert.conf ~/dotfiles/.config/albert/albert.conf
 cp ~/.config/copyq/copyq-commands.ini ~/dotfiles/.config/copyq/copyq-commands.ini
 cp ~/.config/copyq/copyq.conf ~/dotfiles/.config/copyq/copyq.conf
 cp ~/.config/copyq/copyq_tabs.ini ~/dotfiles/.config/copyq/copyq_tabs.ini
-cp ~/.config/obs-studio/basic/scenes/Untitled.json ~/dotfiles/.config/obs-studio/basic/scenes
+#cp ~/.config/obs-studio/basic/scenes/Untitled.json ~/dotfiles/.config/obs-studio/basic/scenes
 cp ~/.config/obs-studio/basic/profiles/Untitled/basic.ini ~/dotfiles/.config/obs-studio/basic/profiles/Untitled/basic.ini
 cp ~/.config/qtile/config.py ~/dotfiles/.config/qtile
 cp ~/.config/qtile/autostart.sh ~/dotfiles/.config/qtile
