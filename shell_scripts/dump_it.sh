@@ -13,6 +13,7 @@ cp ~/.config/obs-studio/basic/profiles/Untitled/basic.ini ~/dotfiles/.config/obs
 cp ~/.config/qtile/config.py ~/dotfiles/.config/qtile
 cp ~/.config/qtile/autostart.sh ~/dotfiles/.config/qtile
 cp ~/.config/pulse/client.conf ~/dotfiles/.config/pulse
+cp -r ~/.config/dmenu/patches ~/dotfiles/.config/
 
 cp -r ~/.config/dunst ~/dotfiles/.config
 cp -r ~/.config/alacritty/ ~/dotfiles/.config
@@ -25,4 +26,3 @@ cp -r ~/.config/nvim ~/dotfiles/.config
 cp -r ~/.config/nvim ~/dotfiles/.config
 cp -r ~/.config/obs-studio/plugin_config ~/dotfiles/.config/obs-studio/
 cp -r ~/.config/albert/org.albert.extension.websearch ~/dotfiles/.config/albert/
-cp -r ~/.config/dmenu ~/dotfiles/.config/
