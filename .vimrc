@@ -2,6 +2,7 @@ call plug#begin('~/.vim/plugins')
 
 Plug 'junegunn/vim-easy-align'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'preservim/nerdtree' "SHIFT+i to display hidden files
 "Plug 'Rip-Rip/clang_complete'
 
 call plug#end()

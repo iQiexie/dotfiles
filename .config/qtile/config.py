@@ -248,7 +248,6 @@ dgroups_key_binder = None
 dgroups_app_rules = []  # type: List
 follow_mouse_focus = False
 bring_front_click = False
-cursor_warp = False
 floating_layout = layout.Floating(float_rules=[
     # Run the utility of `xprop` to see the wm class and name of an X client.
     *layout.Floating.default_float_rules,
@@ -276,3 +275,7 @@ auto_minimize = True
 # We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
 # java that happens to be on java's whitelist.
 wmname = "LG3D"
+
+cursor_warp = True
+bring_front_click = True
+follow_mouse_focus = True
