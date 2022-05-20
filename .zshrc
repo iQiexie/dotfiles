@@ -65,6 +65,9 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # https://geoff.greer.fm/lscolors/
 
 
+PATH=$PATH:/home/roman/Applications
+
+
 # Aliases
 alias pacman="sudo pacman"
 alias ls="ls -a --color --group-directories-first"
@@ -89,6 +92,7 @@ export LS_COLORS="di=1;34:ln=0:so=0:pi=0:ex=1;31:bd=0:cd=0:su=0:sg=0:tw=0:ow=0"
 export WINEESYNC=1
 export TERM=xterm-256color # Fix mouse=a in allacrity vim
 export DBUS_SESSION_BUS_WINDOWID
+export LC_COLLATE=C # Make .files apper on top
 
 
 # Stop littering $HOME folder

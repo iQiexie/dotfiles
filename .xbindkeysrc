@@ -4,5 +4,8 @@
 "emote"
 	mod4 + period
 
-"flameshot gui -c"
+"flameshot gui"
 	mod4 + s
+
+"dmenu_run -hp $(cat ~/.config/dmenu/patches/hplist)"
+	mod4 + r
