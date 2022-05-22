@@ -72,7 +72,6 @@ PATH=$PATH:/home/roman/Applications
 alias pacman="sudo pacman"
 alias ls="ls -a --color --group-directories-first"
 alias lsa="ls -gh"
-alias chrome="chromium"
 alias untar="tar xvf"
 alias albert="albert & disown"
 alias docker="sudo docker"

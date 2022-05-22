@@ -17,7 +17,7 @@
 
 ### Software I'm currently trying to use
  - vimb (web browser)
- - albert-bin (command line)
+ - albert-bin (command line) 			Switching to dmenu
  - deepin-screenshot (screenshots)
  - scrot (cli screenshot)
  - keepassxc (password manager)
