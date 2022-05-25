@@ -3,7 +3,6 @@ call plug#begin('~/.vim/plugins')
 Plug 'junegunn/vim-easy-align'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'preservim/nerdtree' "SHIFT+i to display hidden files
-"Plug 'Rip-Rip/clang_complete'
 
 call plug#end()
 
@@ -11,6 +10,8 @@ vmap <C-S-c> "+y
 vmap <C-S-v> "+p
 syntax on
 filetype indent on
+filetype plugin indent on
+
 
 set tabstop=4
 set number "Display lines's id
@@ -38,7 +39,7 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 
 "Cool colorschemes: elflord ron torte murphy koehler slate
 "Their path /usr/share/vim/vim82/colors/
-colorscheme elflord
+"colorscheme elflord
 
 set clipboard=unnamedplus
 

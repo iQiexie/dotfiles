@@ -180,14 +180,15 @@ def init_widgets(screen_id):
 		),
 
         widget.Volume(
-            padding=10
+            padding=10,
+            mute_command='amixer -D pulse set Master 1+ toggle',
         ),
 
         widget.Clipboard(
             padding=10,
 	    	timeout=1,
         ),
-
+        
         widget.Clock(
             format='%d.%m.%Y %a %H:%M',
             foreground=colors[0],
