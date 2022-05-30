@@ -157,6 +157,14 @@ widget_defaults = dict(
 extension_defaults = widget_defaults.copy()
 
 
+def calendar_wrapper(qtile):
+    qtile.spawn_cmd('alacritty -e calcure')
+
+
+def calendar():
+    lazy.function(calendar_wrapper)
+
+
 def init_widgets(screen_id):
     return [
         widget.CurrentScreen(
@@ -193,7 +201,8 @@ def init_widgets(screen_id):
             format='%d.%m.%Y %a %H:%M',
             foreground=colors[0],
             background=colors[1],
-            padding=10
+            padding=10,
+            mouse_callbacks={'Button1': calendar},
         ),
     ]
 

@@ -45,6 +45,6 @@ set clipboard=unnamedplus
 
 
 " vim-easy-allign
-nmap ga <Plug>(EasyAlign)
+" nmap ga <Plug>(EasyAlign)
 
 set mouse=a

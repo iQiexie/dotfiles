@@ -6,4 +6,4 @@ xrandr --auto
 exec ~/kblayout.sh &
 exec ~/xlayout.sh &
 xwallpaper --zoom ~/.config/nord.png &
-exec qtile start
+exec dbus-launch qtile start
