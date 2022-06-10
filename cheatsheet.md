@@ -1,4 +1,4 @@
-## FAQ
+## My little personal WIKI
 
 ### Beginner Linux Tips
 
@@ -30,12 +30,24 @@
 
 ### Possible problems and solutions
 
-- fixing audio not working tutorial https://superuser.com/questions/626606/how-to-make-alsa-pick-a-preferred-sound-device-automatically
+#### Installing a Jetbrain IDE
 
-	run alsamixer for device ids
+In order to install Jetbrains IDE the path to their bin directories must be directly specify in the running script. For example for webstorm. When you unpack it there's {webstorm_unpacked_archive_path}/bin/webstorm.sh script running webstorm. You have to copy this script to /usr/bin/webstorm and modify these lines
 
-	there are channels in alsamixer displayed under the sound sources. Make sure it's not muted (press M) and make sure it's not true that inly left or right channel is muted (OM, MO, MM)
-	It might be diffficult to see letters (especially "O", but they're there)
+```
+IDE_BIN_HOME=/opt/webstorm/bin
+IDE_HOME=/opt/webstorm
+```
+
+and change the ``` /opt/webstorm ``` path to whereever you unpacked the archibe
+
+#### Fixing audio
+
+fixing audio not working tutorial https://superuser.com/questions/626606/how-to-make-alsa-pick-a-preferred-sound-device-automatically
+
+run ``` alsamixer ``` to list the ids of all the devices
+
+there are channels in alsamixer displayed under the sound sources. Make sure it's not muted (press M) and make sure it's not true that inly left or right channel is muted (OM, MO, MM). It might be diffficult to see letters (especially "O", but they're there)
 
 ### MPV
 
