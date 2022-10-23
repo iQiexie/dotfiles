@@ -5,19 +5,18 @@ function print() {
 	stage="${1}"
 	text="${2}"
 	echo "[Dotfiles Installer: ${stage}]: ${text}"
+
 }
+
+print "PRECONFIGURING" "ENABLING PARALLEL DOWNLOADS"
+sudo sed -i '/ParallelDownloads/s/^#//g' /etc/pacman.conf
 
 print "PRECONFIGURING" "INSTALLING YAY"
 ./shell_scripts/install_yay.sh
 
-
 print "DOWNLOADING" "CORE PACKAGES"
 #sed "s/#.*$//g" ./shell_scripts/pkglist.txt | yay -S -
 yay -S $(sed "s/#.*$//g" ./shell_scripts/pkglist.txt)
-
-## TODO
-##print "CONFIGURING" "ALSACTL"
-##exec sudo alsactl restore
 
 print "CONFIGURING" "GIT"
 git config --global user.name "Neykuratick"
@@ -44,9 +43,11 @@ sudo systemctl enable fixf.service
 sudo systemctl start fixf.service
 
 print "CONFIGURING" "DEFAULT SHELL"
-exec chsh -s $(which zsh)
+chsh -s $(which zsh)
 
-print "CONFIGURING" "Pacman parallel downloads"
-sudo echo "ParallelDownloads = 5" >> /etc/pacman.conf
+# TODO
+#print "CONFIGURING" "ALSACTL"
+#exec sudo alsactl restore
+
 
 print "DONE" "Reboot your computer or login into your user once again"
