@@ -21,7 +21,7 @@
  - grip (realtime .md renderer)
 
 
-#### More on packages ./shell_scripts/pkglist.txt
+#### More on packages at `./shell_scripts/pkglist.txt`
 
 ### Chromium extensions:
  - Adblock Plus
