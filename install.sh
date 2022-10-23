@@ -46,4 +46,7 @@ sudo systemctl start fixf.service
 print "CONFIGURING" "DEFAULT SHELL"
 exec chsh -s $(which zsh)
 
+print "CONFIGURING" "Pacman parallel downloads"
+sudo echo "ParallelDownloads = 5" >> /etc/pacman.conf
+
 print "DONE" "Reboot your computer or login into your user once again"
