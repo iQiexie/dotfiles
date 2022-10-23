@@ -1,0 +1,34 @@
+# actual programs
+vim
+htop
+xwalllpaper
+alacritty  # terminal
+copyq  # gui clipboard manager
+obs-studio
+keepassxc  # password manager
+zip
+unzip
+neofetch
+qtile
+xbindkeys  # utility to bind keys
+emote  # emoji browser
+peerflix  # utility to stream torrentfiles
+pirate-get  # find prited content (serieses, movies etc.)
+trash-cli  # mv files to trashbin instead of deleting them
+
+# background programs
+zsh
+zsh-syntax-highlighting
+ttf-liberation
+noto-fonts-emoji
+xorg-xrandr
+pulseaudio
+alsa-utils # makes audio work
+xdg-utils
+fuse  # unknown dependencie
+
+# dependencies
+nss  # chromium dependencie
+gst-plugins-good  # makes browsers able to watch videos without crashing
+gst-libav  # makes browsers able to watch videos without crashing
+bc  # change brightness (makes brightness.sh work)

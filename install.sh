@@ -7,12 +7,16 @@ function print() {
 	echo "[Dotfiles Installer: ${stage}]: ${text}"
 }
 
-print "DOWNLOADING" "CORE PACKAGES"
-./shell_scripts/install_downloader.sh
+print "PRECONFIGURING" "INSTALLING YAY"
+./shell_scripts/install_yay.sh
 
-# TODO
-#print "CONFIGURING" "ALSACTL"
-#exec sudo alsactl restore
+
+print "DOWNLOADING" "CORE PACKAGES"
+sed "s/#.*$//g" ./shell_scripts/pkglist.txt | yay -S -
+
+## TODO
+##print "CONFIGURING" "ALSACTL"
+##exec sudo alsactl restore
 
 print "CONFIGURING" "GIT"
 git config --global user.name "Neykuratick"
@@ -34,10 +38,6 @@ print "UNPACKING" ".xinitrc" & cp .xinitrc ~
 print "UNPACKING" ".zshrc" & cp .zshrc ~
 print "UNPACKING" "wallpaper" & cp nord.png ~/.config
 
-# TODO
-#echo [INSTALLER] SETTING UP SYSTEM FOLDERS
-#mkdir ~/.cache/zsh
-#
 #echo [INSTALLER] CONFIGURING AUTOSTART
 #exec sudo cp autostart_services/fixf.service /etc/systemd/system/fixf.service &
 #exec sudo cp shell_scripts/fixf.sh /usr/bin/fixf.sh &
