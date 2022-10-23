@@ -1,5 +1,7 @@
 #!/bin/bash  
 
+set -e
+
 
 function print() {
 	stage="${1}"
@@ -17,6 +19,9 @@ print "PRECONFIGURING" "INSTALLING YAY"
 print "DOWNLOADING" "CORE PACKAGES"
 #sed "s/#.*$//g" ./shell_scripts/pkglist.txt | yay -S -
 yay -S $(sed "s/#.*$//g" ./shell_scripts/pkglist.txt)
+
+print "CONFIGURING" "ALSACTL"
+exec sudo alsactl restore
 
 print "CONFIGURING" "GIT"
 git config --global user.name "Neykuratick"
@@ -44,10 +49,5 @@ sudo systemctl start fixf.service
 
 print "CONFIGURING" "DEFAULT SHELL"
 chsh -s $(which zsh)
-
-# TODO
-#print "CONFIGURING" "ALSACTL"
-#exec sudo alsactl restore
-
 
 print "DONE" "Reboot your computer or login into your user once again"
