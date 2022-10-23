@@ -34,6 +34,7 @@ print "UNPACKING" ".config" & cp -r .config ~
 print "UNPACKING" ".vimrc" & cp .vimrc ~
 print "UNPACKING" ".xinitrc" & cp .xinitrc ~
 print "UNPACKING" ".zshrc" & cp .zshrc ~
+print "UNPACKING" ".xbindkeys (key bindings)" & cp .xbindkeysrc ~
 print "UNPACKING" "wallpaper" & cp nord.png ~/.config
 
 print "CONFIGURING AUTOSTART" "keychron key fix"
@@ -45,4 +46,4 @@ sudo systemctl start fixf.service
 print "CONFIGURING" "DEFAULT SHELL"
 exec chsh -s $(which zsh)
 
-print "DONE" "DONE"
+print "DONE" "Reboot your computer or login into your user once again"
