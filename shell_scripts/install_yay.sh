@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 cd ~/dotfiles/shell_scripts
 mkdir temp
 cd temp

@@ -1,7 +1,7 @@
 # actual programs
 vim
 htop
-xwalllpaper
+xwallpaper
 alacritty  # terminal
 copyq  # gui clipboard manager
 obs-studio

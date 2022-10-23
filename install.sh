@@ -1,13 +1,17 @@
-#!/bin/bash  
-
-set -e
-
+#!/bin/bash
 
 function print() {
 	stage="${1}"
 	text="${2}"
 	echo "[Dotfiles Installer: ${stage}]: ${text}"
 
+}
+
+function assert_fails() {
+	if [ $($@) -eq 1 ]
+	then
+		print $2 $3
+	fi
 }
 
 print "PRECONFIGURING" "ENABLING PARALLEL DOWNLOADS"
@@ -17,11 +21,10 @@ print "PRECONFIGURING" "INSTALLING YAY"
 ./shell_scripts/install_yay.sh
 
 print "DOWNLOADING" "CORE PACKAGES"
-#sed "s/#.*$//g" ./shell_scripts/pkglist.txt | yay -S -
 yay -S $(sed "s/#.*$//g" ./shell_scripts/pkglist.txt)
 
 print "CONFIGURING" "ALSACTL"
-exec sudo alsactl restore
+assert_fails "exec sudo alsactl resotre" "CONFIGURING" "ALSACTL FAILED"
 
 print "CONFIGURING" "GIT"
 git config --global user.name "Neykuratick"
@@ -48,6 +51,6 @@ sudo systemctl enable fixf.service
 sudo systemctl start fixf.service
 
 print "CONFIGURING" "DEFAULT SHELL"
-chsh -s $(which zsh)
+chsh -s $(which zsh) || print "CONFIGURING" "FAILED TO SET ZSH AS THE DEFAULT SHELL"
 
 print "DONE" "Reboot your computer or login into your user once again"
