@@ -12,7 +12,8 @@ print "PRECONFIGURING" "INSTALLING YAY"
 
 
 print "DOWNLOADING" "CORE PACKAGES"
-sed "s/#.*$//g" ./shell_scripts/pkglist.txt | yay -S -
+#sed "s/#.*$//g" ./shell_scripts/pkglist.txt | yay -S -
+yay -S $(sed "s/#.*$//g" ./shell_scripts/pkglist.txt)
 
 ## TODO
 ##print "CONFIGURING" "ALSACTL"
@@ -25,9 +26,6 @@ git config --global credential.helper cache
 git config --global credential.helper 'cache --timeout=0' 
 print "CONFIGURING" "Git user email and username: $(git config --global user.email); $(git config --global user.name)"
 
-print "CONFIGURING" "DEFAULT SHELL"
-exec chsh -s $(which zsh)
-
 print "UNPACKING SCRIPT" "xlayout.sh (3 screens setup)" & cp shell_scripts/xlayout.sh ~
 print "UNPACKING SCRIPT" "kblayout.sh (ru, eng keyboard" & cp shell_scripts/kblayout.sh ~
 print "UNPACKING SCRIPT" "brightness.sh" & cp shell_scripts/brightness.sh ~
@@ -38,10 +36,13 @@ print "UNPACKING" ".xinitrc" & cp .xinitrc ~
 print "UNPACKING" ".zshrc" & cp .zshrc ~
 print "UNPACKING" "wallpaper" & cp nord.png ~/.config
 
-#echo [INSTALLER] CONFIGURING AUTOSTART
-#exec sudo cp autostart_services/fixf.service /etc/systemd/system/fixf.service &
-#exec sudo cp shell_scripts/fixf.sh /usr/bin/fixf.sh &
-#exec sudo systemctl enable fixf.service &
-#exec sudo systemctl start fixf.service
-#
-#exec echo [INSTALLER] DONE 
+print "CONFIGURING AUTOSTART" "keychron key fix"
+sudo cp autostart_services/fixf.service /etc/systemd/system/fixf.service
+sudo cp shell_scripts/fixf.sh /usr/bin/fixf.sh
+sudo systemctl enable fixf.service
+sudo systemctl start fixf.service
+
+print "CONFIGURING" "DEFAULT SHELL"
+exec chsh -s $(which zsh)
+
+print "DONE" "DONE"
