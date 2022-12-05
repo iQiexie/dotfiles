@@ -85,6 +85,12 @@ there are channels in alsamixer displayed under the sound sources. Make sure it'
 - if pip install throws "TypeError: SafeFileCache.set() got an unexpected keyword argument 'expires'" exception, run ``` rm -rf ~/.local/lib/python3.10 ```
 
 
+### Problems and errors FAQ
+Authorization required, but no authorization protocol specified
+
+[Source](https://www.reddit.com/r/linux4noobs/comments/lu1plx/comment/iz26eko/?utm_source=share&utm_medium=web2x&context=3) It happens when you delete `~/.Xauthority`. The only way to recover is by getting a hold on the original 'secret' that the X server was started with, and I used to be able to get that using `/proc/$(pgrep Xorg)/cmdline` which would show that -say- `-auth /tmp/serverauth.ZlXaVeEEpM` was passed to Xorg and then that file contains the secret. However, it seems that `/tmp` is cleaned up after a while? In my case that file was removed (don't reboot often). In that case there is nothing you can do short of hacking the memory dump of Xorg or... restarting X.
+
+
 ## Key bindings
 
 ### Alacritty
