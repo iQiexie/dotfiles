@@ -1,9 +1,9 @@
 cp ~/.zshrc ~/dotfiles
 cp ~/.vimrc ~/dotfiles
-cp ~/.xinitrc ~/dotfiles
+#cp ~/.xinitrc ~/dotfiles
 cp ~/.xbindkeysrc ~/dotfiles
 cp ~/kblayout.sh ~/dotfiles/shell_scripts/
-cp ~/fixflameshot.sh ~/dotfiles/shell_scripts/
+#cp ~/fixflameshot.sh ~/dotfiles/shell_scripts/
 
 cp ~/.config/albert/albert.conf ~/dotfiles/.config/albert/albert.conf
 cp ~/.config/copyq/copyq-commands.ini ~/dotfiles/.config/copyq/copyq-commands.ini
@@ -14,7 +14,7 @@ cp ~/.config/obs-studio/basic/profiles/Untitled/basic.ini ~/dotfiles/.config/obs
 cp ~/.config/qtile/config.py ~/dotfiles/.config/qtile
 cp ~/.config/qtile/autostart.sh ~/dotfiles/.config/qtile
 cp ~/.config/pulse/client.conf ~/dotfiles/.config/pulse
-cp -r ~/.config/dmenu/patches ~/dotfiles/.config/
+cp -r ~/.config/suckless/patches ~/dotfiles/.config/
 
 cp -r ~/.config/dunst ~/dotfiles/.config
 cp -r ~/.config/alacritty/ ~/dotfiles/.config

@@ -1,5 +1,7 @@
 #!/bin/sh
 
-#albert &
+cp ~/.Xauthority ~/.config/ &&
+
+albert &
 copyq &
 xbindkeys &
