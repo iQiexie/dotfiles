@@ -43,6 +43,10 @@ and change the ``` /opt/webstorm ``` path to whereever you unpacked the archibe
 
 #### Fixing audio
 
+####### Sound only goes through headphones and not through speaakers even though both are connected
+
+`amixer sset 'Auto-Mute Mode' 'Disabled'`  [Source](https://askubuntu.com/questions/1013439/xubuntu-how-to-use-both-front-and-rear-audio-output)
+
 fixing audio not working tutorial https://superuser.com/questions/626606/how-to-make-alsa-pick-a-preferred-sound-device-automatically
 
 run ``` alsamixer ``` to list the ids of all the devices
