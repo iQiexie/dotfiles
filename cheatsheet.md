@@ -43,11 +43,11 @@ and change the ``` /opt/webstorm ``` path to whereever you unpacked the archibe
 
 #### Fixing audio
 
-- Sound only goes through headphones and not through speaakers even though both are connected
+1. Sound only goes through headphones and not through speaakers even though both are connected
 	`amixer sset 'Auto-Mute Mode' 'Disabled'`  [Source](https://askubuntu.com/questions/1013439/xubuntu-how-to-use-both-front-and-rear-audio-output)
-- Fixing audio not working tutorial `https://superuser.com/questions/626606/how-to-make-alsa-pick-a-preferred-sound-device-automatically`
-- run ``` alsamixer ``` to list the ids of all the devices
-	there are channels in alsamixer displayed under the sound sources. Make sure it's not muted (press M) and make sure it's not true that inly left or right channel is muted (OM, MO, MM). It might 	be diffficult to see letters (especially "O", but they're there)
+2. Fixing audio not working tutorial `https://superuser.com/questions/626606/how-to-make-alsa-pick-a-preferred-sound-device-automatically`
+3. run ``` alsamixer ``` to list the ids of all the devices
+	there are channels in alsamixer displayed under the sound sources. Make sure it's not muted (press M) and make sure it's not true that inly left or right channel is muted (OM, MO, MM). It might be diffficult to see letters (especially "O", but they're there)
 
 ### MPV
 
