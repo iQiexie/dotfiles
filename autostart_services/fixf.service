@@ -1,8 +1,0 @@
-[Unit]
-Description=Script
-
-[Service]
-ExecStart=/usr/bin/fixf.sh
-
-[Install]
-WantedBy=multi-user.target
