@@ -1,0 +1,4 @@
+waybar
+brightnessctl
+otf-font-awesome
+zsh

@@ -1,9 +1,9 @@
 
 # Installing ArchLinux on Macbook Air 2015
 
-[SEE https://www.reddit.com/r/archlinux/comments/y3lba8/just_solved_problem_of_broadcom_wireless_not/]:
-[SEE https://github.com/bitjockey42/archlinux-macbook-air-71]:
-[SEE https://youtu.be/_7600jPFihg?si=d4-N7Y9MysVGzrqI&t=213/]:
+SEE https://www.reddit.com/r/archlinux/comments/y3lba8/just_solved_problem_of_broadcom_wireless_not
+SEE https://github.com/bitjockey42/archlinux-macbook-air-71
+SEE https://youtu.be/_7600jPFihg?si=d4-N7Y9MysVGzrqI&t=213
 
 
 1. Grab Grab the latest ISO from https://archlinux.org/download/
@@ -68,3 +68,8 @@ systemctl enable --now iwd
 ```
 
 Connect to the internet using `iwctl`
+
+
+### Fonts for waybar icons
+
+Install this package `otf-font-awesome` for the waybar icons to display correctly
