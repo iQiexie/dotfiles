@@ -4,9 +4,10 @@ Plug 'junegunn/vim-easy-align'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'preservim/nerdtree' "SHIFT+i to display hidden files
 
+
 call plug#end()
 
-vmap <C-S-c> "+y
+vmap <C-y> "+y
 vmap <C-S-v> "+p
 syntax on
 filetype indent on
@@ -20,10 +21,6 @@ set incsearch "To start highlighting as soon as you start typing for search
 "set hlsearch "Highlights everything till the end of the session. Type :noh to clean
 set viminfo+=n~/.vim/viminfo " Move .viminfo file to .vim folder
 
-
-" MY KEYBINDINGS
-
-vmap <C-y> "+y
 
 "The long line will be visually wrapped. “j” will no longer skip the fake part of the visual line.
 nnoremap j gj
@@ -41,7 +38,8 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 "Their path /usr/share/vim/vim82/colors/
 "colorscheme elflord
 
-set clipboard=unnamedplus
+set clipboard+=unnamedplus
+set clipboard+=unnamed
 
 
 " vim-easy-allign

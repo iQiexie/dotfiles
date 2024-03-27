@@ -7,5 +7,5 @@
 "flameshot gui"
 	mod4 + s
 
-"dmenu_run -hp $(cat ~/.config/dmenu/patches/hplist)"
+"dmenu_run"
 	mod4 + r

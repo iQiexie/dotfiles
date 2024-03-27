@@ -80,9 +80,11 @@ alias xdg="xdg-mime"
 alias xgd="xdg-mime"
 alias ciget="pirate-get -C \"peerflix %s --mpv --all -- --fs\""
 alias rm="trash"
+alias pbcopy='xsel --clipboard --input'
 
 
 export PATH="$PATH:/home/roman/.local/bin"
+export EDITOR=vim
 export NO_AT_BRIDGE=1
 eval $(dbus-launch --sh-syntax)
 export DBUS_SESSION_BUS_ADDRESS
