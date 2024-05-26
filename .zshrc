@@ -54,18 +54,10 @@ preexec() { echo -ne '\e[1 q' ;} # Use beam shape cursor for each new prompt.
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
-# Load aliases and shortcuts if existent.
-[ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc"
-[ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
-
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 
-# Configuring colors used by 'ls' command
-# https://geoff.greer.fm/lscolors/
 
-
-PATH=$PATH:/home/roman/Applications
 
 
 # Aliases
@@ -73,26 +65,31 @@ alias pacman="sudo pacman"
 alias ls="ls -a --color --group-directories-first"
 alias lsa="ls -gh"
 alias untar="tar xvf"
+alias rm="trash"
+
+alias xdg="xdg-mime"
+alias xgd="xdg-mime"
+
 alias albert="albert & disown"
 alias docker="sudo docker"
 alias docker-compose="sudo docker-compose"
-alias xdg="xdg-mime"
-alias xgd="xdg-mime"
 alias ciget="pirate-get -C \"peerflix %s --mpv --all -- --fs\""
-alias rm="trash"
 
+
+# Exports
 
 export PATH="$PATH:/home/roman/.local/bin"
-export NO_AT_BRIDGE=1
+export NO_AT_BRIDGE=1  # ?
 eval $(dbus-launch --sh-syntax)
 export DBUS_SESSION_BUS_ADDRESS
 export DBUS_SESSION_BUS_PID
-export LS_COLORS="di=1;34:ln=0:so=0:pi=0:ex=1;31:bd=0:cd=0:su=0:sg=0:tw=0:ow=0"
-export WINEESYNC=1
-export TERM=xterm-256color # Fix mouse=a in allacrity vim
 export DBUS_SESSION_BUS_WINDOWID
-export LC_COLLATE=C # Make .files apper on top
+export WINEESYNC=1
+export LC_COLLATE=C # Make dotfiles (ones starting with '.') apper on top
 
+# Configuring colors used by 'ls' command https://geoff.greer.fm/lscolors/
+export LS_COLORS="di=1;34:ln=0:so=0:pi=0:ex=1;31:bd=0:cd=0:su=0:sg=0:tw=0:ow=0"
+export TERM=xterm-256color # Fix mouse=a in allacrity vim
 
 # Stop littering $HOME folder
 # https://wiki.archlinux.org/title/XDG_Base_Directory
@@ -110,5 +107,4 @@ export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
 setopt APPEND_HISTORY
 
 #neofetch
-
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

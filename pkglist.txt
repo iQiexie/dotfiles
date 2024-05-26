@@ -1,0 +1,6 @@
+waybar
+brightnessctl  # controlling monitor brightness on laptop
+otf-font-awesome # displaying proper icons in waybar
+zsh
+xclip # copy command output into buffer
+less # because zsh doesn't have it by default for some reason
