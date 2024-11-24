@@ -1,5 +1,10 @@
 ## My little personal WIKI
 
+### FIX NO AUDIO IN SPEAKERS WHEN HEADPHONES PLUGGED IN!!!!
+
+- https://superuser.com/a/1604188 (run `alsamixer`, then press F6 to select audio card. You probably need `HDA Intel PCH`, so select it. Then you'll see a bunch of audio outputs, scroll to the edge of the screen using arrow keys (right one) and then you'll se audio output called `Audio-mut`, it will be on the very right even off the screen. Disable it and then run `sudo alsactl store`. After that you will be able to select audio output `Line Out` (speakers) even when headphones are plugged in)
+
+
 ### Beginner Linux Tips
 
 - chmod +x {file name} - To make something exectable
